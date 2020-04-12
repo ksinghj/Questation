@@ -4,11 +4,11 @@ import { Field, reduxForm } from "redux-form";
 class StreamCreate extends React.Component {
   renderInput({ input, label, meta }) {
     // Destructured formProps.input
-    console.log(meta);
     return (
       <div className="field">
         <label>{label}</label>
-        <input required {...input} />
+        <input {...input} />
+        <div>{meta.error}</div>
       </div>
     );
   }
