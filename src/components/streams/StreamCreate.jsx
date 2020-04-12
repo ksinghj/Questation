@@ -2,12 +2,30 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 
 class StreamCreate extends React.Component {
+  renderInput({ input, label }) {
+    // Destructured formProps.input
+    return (
+      <div className="field">
+        <label>{label}</label>
+        <input {...input} />
+      </div>
+    );
+  }
+
   render() {
     return (
       <div>
         <form>
-          <Field name="title" />
-          <Field name="description" />
+          <Field
+            name="title"
+            component={this.renderInput}
+            label="Enter title"
+          />
+          <Field
+            name="description"
+            component={this.renderInput}
+            label="Enter description"
+          />
           <button type="submit">Submit</button>
         </form>
       </div>
