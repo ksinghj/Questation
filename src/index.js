@@ -21,3 +21,5 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
+
+// Macbook 16" test
