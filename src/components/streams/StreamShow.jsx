@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 class StreamShow extends React.Component {
   componentDidMount() {
     this.props.fetchStream(this.props.match.params.id);
-    // console.log(this.props);
   }
 
   renderStream = () => {
