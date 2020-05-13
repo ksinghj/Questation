@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm } from "redux-form"; // TODO: Use redux form in QuestionCreate
 
 class StreamForm extends React.Component {
   renderError = ({ error, touched }) => {
@@ -33,7 +33,8 @@ class StreamForm extends React.Component {
       <div>
         <form
           className="ui form error"
-          onSubmit={this.props.handleSubmit(this.onSubmit)}>
+          onSubmit={this.props.handleSubmit(this.onSubmit)}
+        >
           <Field
             name="title"
             component={this.renderInput}
