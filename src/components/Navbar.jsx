@@ -7,11 +7,15 @@ const Header = () => {
   return (
     <div className="ui secondary pointing menu">
       <Link to="/" className="item">
-        <img src={qsLogo} alt="logo" />
+        <img
+          src={qsLogo}
+          alt="logo"
+          style={{ width: "150px", height: "auto" }}
+        />
       </Link>
       <div className="right menu">
-        <Link to="/" className="item">
-          Back to start
+        <Link style={{ alignSelf: "center", color: "black" }} to="/">
+          <p>Back to start</p>
         </Link>
       </div>
     </div>
