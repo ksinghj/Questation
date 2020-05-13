@@ -24,7 +24,7 @@ class QuestionCreate extends React.Component {
   render() {
     return (
       <div>
-        {this.renderQuestions()}
+        <form>{this.renderQuestions()}</form>
         <button className="ui button" onClick={this.addQuestion}>
           Add a question
         </button>
