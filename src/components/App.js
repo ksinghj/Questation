@@ -1,11 +1,11 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import Header from "./Header";
-import StreamList from "./streams/StreamList";
-import StreamCreate from "./streams/StreamCreate";
-import StreamDelete from "./streams/StreamDelete";
-import StreamShow from "./streams/StreamShow";
-import StreamEdit from "./streams/StreamEdit";
+import StreamList from "./pages/StreamList";
+import StreamCreate from "./pages/StreamCreate";
+import StreamDelete from "./pages/StreamDelete";
+import StreamShow from "./pages/StreamShow";
+import StreamEdit from "./pages/StreamEdit";
 import history from "../history";
 
 class App extends React.Component {
