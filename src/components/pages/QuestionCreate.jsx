@@ -21,13 +21,23 @@ class QuestionCreate extends React.Component {
     });
   };
 
+  onQuestionFormSubmit = e => {
+    e.preventDefault();
+    console.log("form submitted");
+  };
+
   render() {
     return (
       <div>
-        <form>{this.renderQuestions()}</form>
-        <button className="ui button" onClick={this.addQuestion}>
-          Add a question
-        </button>
+        <form onSubmit={this.onQuestionFormSubmit}>
+          {this.renderQuestions()}
+          <button className="ui button" onClick={this.addQuestion}>
+            Add a question
+          </button>
+          <button className="ui button green" type="submit">
+            Continue
+          </button>
+        </form>
       </div>
     );
   }
