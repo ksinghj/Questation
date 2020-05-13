@@ -1,7 +1,9 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import Header from "./Header";
-import StreamList from "./pages/StreamList";
+import Navbar from "./Navbar";
+import QuestionCreate from "./pages/QuestionCreate";
+
+// template comps
 import StreamCreate from "./pages/StreamCreate";
 import StreamDelete from "./pages/StreamDelete";
 import StreamShow from "./pages/StreamShow";
@@ -13,9 +15,9 @@ class App extends React.Component {
     return (
       <div className="ui container">
         <Router history={history}>
-          <Header />
+          <Navbar />
           <Switch>
-            <Route path="/" exact component={StreamList} />
+            <Route path="/" exact component={QuestionCreate} />
             <Route path="/streams/new" exact component={StreamCreate} />
             <Route path="/streams/delete/:id" exact component={StreamDelete} />
             <Route path="/streams/:id" exact component={StreamShow} />
