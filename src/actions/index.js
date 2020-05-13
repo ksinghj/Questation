@@ -8,6 +8,7 @@ import {
   FETCH_STREAM,
   DELETE_STREAM,
   EDIT_STREAM,
+  CREATE_QUESTION,
 } from "./types";
 
 export const signIn = userId => {
@@ -55,4 +56,12 @@ export const deleteStream = id => async dispatch => {
 
   dispatch({ type: DELETE_STREAM, payload: id });
   history.push("/");
+};
+
+export const createQuestion = value => {
+  console.log("Question created");
+  return {
+    type: CREATE_QUESTION,
+    payload: value,
+  };
 };

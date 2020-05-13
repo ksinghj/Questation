@@ -1,29 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
+import { createQuestion } from "../../actions";
+import QuestionForm from "./QuestionForm";
 
 class QuestionCreate extends React.Component {
+  onSubmit = formValues => {
+    this.props.createStream(formValues); // change to question
+  };
+
   render() {
     return (
       <div>
-        QuestionCreate
-        <form>
-          <div class="ui input">
-            <input type="text" placeholder="Example: 91+(5-2)/2" />
-          </div>
-          <div class="ui animated button" tabindex="0">
-            <div class="visible content">Add question +</div>
-            <div class="hidden content">
-              <i class="plus icon"></i>
-            </div>
-          </div>
-        </form>
+        <QuestionForm onSubmit={this.onSubmit} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return { questions: state.questions };
-};
-
-export default connect(mapStateToProps, {})(QuestionCreate);
+export default connect(null, { createQuestion })(QuestionCreate);
