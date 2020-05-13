@@ -6,7 +6,7 @@ class QuestionForm extends React.Component {
     return (
       <div>
         <div className="ui input">
-          <input type="text" />
+          <input onChange={this.props.onInputChange} type="text" />
         </div>
         <button className="ui button red">Delete</button>
       </div>
