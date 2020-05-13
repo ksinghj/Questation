@@ -58,10 +58,10 @@ export const deleteStream = id => async dispatch => {
   history.push("/");
 };
 
-export const createQuestion = value => {
+export const createQuestion = formValues => {
   console.log("Question created");
   return {
     type: CREATE_QUESTION,
-    payload: value,
+    payload: formValues,
   };
 };
