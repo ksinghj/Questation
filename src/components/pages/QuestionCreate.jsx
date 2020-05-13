@@ -12,6 +12,7 @@ class QuestionCreate extends React.Component {
     return (
       <div>
         <QuestionForm onSubmit={this.onSubmit} />
+        <button className="ui button">Add a question</button>
       </div>
     );
   }

@@ -36,17 +36,12 @@ class QuestionForm extends React.Component {
           onSubmit={this.props.handleSubmit(this.onSubmit)}
         >
           <Field
-            name="title"
+            name="question"
             component={this.renderInput}
-            label="Enter title"
-          />
-          <Field
-            name="description"
-            component={this.renderInput}
-            label="Enter description"
+            label="Enter a question"
           />
           <button type="submit" className="ui button primary">
-            Submit
+            Add to sheet
           </button>
         </form>
       </div>
@@ -57,11 +52,8 @@ class QuestionForm extends React.Component {
 const validate = formValues => {
   const errors = {};
 
-  if (!formValues.title) {
-    errors.title = "Enter a title for your stream";
-  }
-  if (!formValues.description) {
-    errors.description = "Your stream needs a description!";
+  if (!formValues.question) {
+    errors.question = "Enter a question to continue";
   }
   return errors;
 };
