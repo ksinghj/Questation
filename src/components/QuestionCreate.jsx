@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createQuestionSheet } from "../actions";
 import history from "../history";
 
-import "../styles/QuestionCreate/QuestionCreate.css";
+import "../styles/QuestionCreate/index.css";
 
 class QuestionCreate extends React.Component {
   state = { input1: "", input2: "", input3: "", input4: "", input5: "" };
@@ -57,8 +57,8 @@ class QuestionCreate extends React.Component {
           <div className="ui input">
             <input onChange={this.handeInput5Change} id="5" />
           </div>
-          <button className="qs-button" type="submit">
-            continue
+          <button className="button" type="submit">
+            Continue
           </button>
         </form>
       </div>

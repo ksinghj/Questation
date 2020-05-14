@@ -1,0 +1,17 @@
+.button {
+  cursor: pointer;
+  width: 8rem;
+  padding: 1em;
+  background: #ff6565;
+  color: #fff;
+  border: 1px solid #ff6565;
+  border-radius: 5px;
+  -webkit-transition: ease-in-out 250ms;
+  transition: ease-in-out 250ms;
+}
+
+.button:hover {
+  background: #fff;
+  color: #ff6565;
+  border: 1px solid #ff6565;
+}
