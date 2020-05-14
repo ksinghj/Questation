@@ -15,7 +15,7 @@ class StartScreen extends Component {
             />
           </div>
           <div className="button-div main-flex-item start-btn-div">
-            <Link to="/questation/create">
+            <Link to="/create">
               <button data-function="start" type="button">
                 Start
               </button>

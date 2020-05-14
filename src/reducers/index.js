@@ -1,16 +1,14 @@
 import { combineReducers } from "redux";
-import { reducer as formReducer } from "redux-form";
 
-const questions = (state = [], action) => {
+const questionReducer = (state = {}, action) => {
   switch (action.type) {
     case "CREATE_QUESTION":
-      return [...state, { question: action.payload }];
+      return { ...state, questions: action.payload };
     default:
       return state;
   }
 };
 
 export default combineReducers({
-  form: formReducer,
-  questions,
+  questionReducer,
 });

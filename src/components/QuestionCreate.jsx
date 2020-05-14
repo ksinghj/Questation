@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createQuestionSheet } from "../../actions";
+import { createQuestionSheet } from "../actions";
+import history from "../history";
+
+import "../styles/QuestionCreate/QuestionCreate.css";
 
 class QuestionCreate extends React.Component {
   state = { input1: "", input2: "", input3: "", input4: "", input5: "" };
@@ -8,7 +11,8 @@ class QuestionCreate extends React.Component {
   onFormSubmit = e => {
     e.preventDefault();
     console.log(this.state);
-    // this.props.createQuestionSheet(this.state);
+    this.props.createQuestionSheet(this.state);
+    history.push("/review");
   };
 
   handeInput1Change = e => {
@@ -53,8 +57,8 @@ class QuestionCreate extends React.Component {
           <div className="ui input">
             <input onChange={this.handeInput5Change} id="5" />
           </div>
-          <button className="ui button green" type="submit">
-            Continue
+          <button className="qs-button" type="submit">
+            continue
           </button>
         </form>
       </div>
