@@ -5,9 +5,6 @@ import QuestionCreate from "./QuestionCreate";
 import StartScreen from "./StartScreen";
 import SheetReview from "./SheetReview";
 
-// template comps
-import StreamShow from "./pages/StreamShow";
-import StreamEdit from "./pages/StreamEdit";
 import history from "../history";
 
 class App extends React.Component {
@@ -20,8 +17,6 @@ class App extends React.Component {
           <Switch>
             <Route path="/create" component={QuestionCreate} />
             <Route path="/review" exact component={SheetReview} />
-            <Route path="/:id" exact component={StreamShow} />
-            <Route path="/edit/:id" exact component={StreamEdit} />
           </Switch>
         </Router>
       </div>

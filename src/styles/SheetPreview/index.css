@@ -1,0 +1,14 @@
+.sheetpreview__container {
+  margin: 2em;
+  border: 1px solid rgba(129, 129, 129, 0.541);
+  border-radius: 5px;
+}
+
+.sheetpreview__list {
+  margin: 1em 2em 5em 2em;
+}
+
+.sheet {
+  height: 55vh;
+  width: 45vw;
+}
