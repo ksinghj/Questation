@@ -15,3 +15,16 @@
   color: #ff6565;
   border: 1px solid #ff6565;
 }
+
+.questioncreate__container {
+  margin: auto;
+  max-width: 500px;
+}
+
+.questioncreate__input {
+  margin: 1em 0;
+}
+
+.questioncreate__continue {
+  margin: 1em auto;
+}

@@ -37,27 +37,27 @@ class QuestionCreate extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="questioncreate__container">
         <form
           onSubmit={this.onFormSubmit}
           style={{ display: "flex", flexDirection: "column" }}
         >
-          <div className="ui input">
+          <div className="ui input questioncreate__input">
             <input onChange={this.handeInput1Change} id="1" />
           </div>
-          <div className="ui input">
+          <div className="ui input questioncreate__input">
             <input onChange={this.handeInput2Change} id="2" />
           </div>
-          <div className="ui input">
+          <div className="ui input questioncreate__input">
             <input onChange={this.handeInput3Change} id="3" />
           </div>
-          <div className="ui input">
+          <div className="ui input questioncreate__input">
             <input onChange={this.handeInput4Change} id="4" />
           </div>
-          <div className="ui input">
+          <div className="ui input questioncreate__input">
             <input onChange={this.handeInput5Change} id="5" />
           </div>
-          <button className="button" type="submit">
+          <button className="button questioncreate__continue" type="submit">
             Continue
           </button>
         </form>
