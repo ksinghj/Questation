@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.questioncreate__container h2 {
+  margin-top: 2em;
+}
+
 .questioncreate__input {
   margin: 1em 0;
 }
