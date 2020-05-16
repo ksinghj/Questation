@@ -10,6 +10,10 @@
   margin: 1em 2em 5em 2em;
 }
 
+.sheetpreview__list li {
+  margin: 1.2em 0;
+}
+
 .sheet {
   height: 55vh;
   width: 45vw;
@@ -20,4 +24,10 @@
   right: 0;
   position: absolute;
   padding: 1em;
+}
+
+.watermark__image {
+  max-width: 90px;
+  height: auto;
+  opacity: 0.6;
 }

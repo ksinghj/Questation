@@ -14,7 +14,13 @@ const SheetPreview = ({ props }) => {
           return <li key={q}>{q}</li>;
         })}
       </ol>
-      <div className="sheetpreview__watermark">watermark</div>
+      <div className="sheetpreview__watermark">
+        <img
+          className="watermark__image"
+          src={require("../img/questation-logo.png")}
+          alt="Questation logo"
+        />
+      </div>
     </div>
   );
 };

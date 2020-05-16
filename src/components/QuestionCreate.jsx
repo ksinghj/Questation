@@ -4,6 +4,7 @@ import { createQuestionSheet } from "../actions";
 import history from "../history";
 
 import "../styles/QuestionCreate/index.css";
+import "../styles/misc/button.css";
 
 class QuestionCreate extends React.Component {
   state = { input1: "", input2: "", input3: "", input4: "", input5: "" };
@@ -39,6 +40,7 @@ class QuestionCreate extends React.Component {
     return (
       <div className="questioncreate__container">
         <h2>Create a Question Sheet</h2>
+        <p>Questation only allows 5 questions for now.</p>
         <form
           onSubmit={this.onFormSubmit}
           style={{ display: "flex", flexDirection: "column" }}

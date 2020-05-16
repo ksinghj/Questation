@@ -1,3 +1,9 @@
 .sheetreview__container {
   text-align: center;
+  position: relative;
+}
+
+.sheetreview__container button {
+  position: absolute;
+  left: 0;
 }
