@@ -9,6 +9,7 @@ import {
   DELETE_STREAM,
   EDIT_STREAM,
   CREATE_QUESTION,
+  GO_BACK,
 } from "./types";
 
 export const signIn = userId => {
@@ -62,5 +63,17 @@ export const createQuestionSheet = inputs => {
   return {
     type: CREATE_QUESTION,
     payload: inputs,
+  };
+};
+
+export const clickGoBack = () => {
+  return {
+    type: GO_BACK,
+  };
+};
+
+export const clickContinue = () => {
+  return {
+    type: "CONTINUE",
   };
 };

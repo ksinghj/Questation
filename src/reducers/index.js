@@ -9,6 +9,18 @@ const questionReducer = (state = {}, action) => {
   }
 };
 
+const goBackClicked = (state = false, action) => {
+  switch (action.type) {
+    case "GO_BACK":
+      return (state = true);
+    case "CONTINUE":
+      return (state = false);
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   questionReducer,
+  goBackClicked,
 });

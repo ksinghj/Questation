@@ -1,13 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createQuestionSheet } from "../actions";
+import { createQuestionSheet, clickContinue } from "../actions";
 import history from "../history";
 
 import "../styles/QuestionCreate/index.css";
 import "../styles/misc/button.css";
 
 class QuestionCreate extends React.Component {
-  state = { input1: "", input2: "", input3: "", input4: "", input5: "" };
+  state = {
+    input1: "",
+    input2: "",
+    input3: "",
+    input4: "",
+    input5: "",
+  };
 
   onFormSubmit = e => {
     e.preventDefault();
@@ -59,7 +65,11 @@ class QuestionCreate extends React.Component {
           <div className="ui input questioncreate__input">
             <input onChange={this.handeInput5Change} id="5" />
           </div>
-          <button className="button questioncreate__continue" type="submit">
+          <button
+            className="button questioncreate__continue"
+            type="submit"
+            onClick={this.props.clickContinue}
+          >
             Continue
           </button>
         </form>
@@ -68,4 +78,13 @@ class QuestionCreate extends React.Component {
   }
 }
 
-export default connect(null, { createQuestionSheet })(QuestionCreate);
+const mapStateToProps = state => {
+  return {
+    goBackClicked: state.goBackClicked,
+    questions: state.questionReducer.questions,
+  };
+};
+
+export default connect(mapStateToProps, { createQuestionSheet, clickContinue })(
+  QuestionCreate
+);
