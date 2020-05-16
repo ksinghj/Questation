@@ -2,12 +2,12 @@ import React from "react";
 import SheetPreview from "./SheetPreview";
 import GenerateSheets from "./GenerateSheets";
 
-// import css
+import "../styles/SheetReview/index.css";
 
 class SheetReview extends React.Component {
   render() {
     return (
-      <div>
+      <div className="sheetreview__container">
         <h2>Review Question Sheet</h2>
         <SheetPreview />
         <GenerateSheets />

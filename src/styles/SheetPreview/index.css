@@ -1,7 +1,9 @@
 .sheetpreview__container {
-  margin: 2em;
+  margin: 2em auto;
   border: 1px solid rgba(129, 129, 129, 0.541);
   border-radius: 5px;
+  position: relative;
+  max-width: 450px;
 }
 
 .sheetpreview__list {
@@ -11,4 +13,11 @@
 .sheet {
   height: 55vh;
   width: 45vw;
+}
+
+.sheetpreview__watermark {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 1em;
 }
