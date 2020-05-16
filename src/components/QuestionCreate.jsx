@@ -38,6 +38,7 @@ class QuestionCreate extends React.Component {
   render() {
     return (
       <div className="questioncreate__container">
+        <h2>Create a Question Sheet</h2>
         <form
           onSubmit={this.onFormSubmit}
           style={{ display: "flex", flexDirection: "column" }}

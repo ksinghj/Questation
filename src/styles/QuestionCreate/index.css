@@ -19,6 +19,7 @@
 .questioncreate__container {
   margin: auto;
   max-width: 500px;
+  text-align: center;
 }
 
 .questioncreate__input {
