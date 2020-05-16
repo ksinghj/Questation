@@ -22,6 +22,9 @@ class SheetReview extends React.Component {
           </button>
         </Link>
         <h2>Review Question Sheet</h2>
+        <p>
+          Warning: Pressing go back will erase the questions from your sheet.
+        </p>
         <SheetPreview questions={this.props.questions} />
         <GenerateSheets />
       </div>

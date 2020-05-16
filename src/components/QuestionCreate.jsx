@@ -41,11 +41,45 @@ class QuestionCreate extends React.Component {
     this.setState({ input5: e.target.value });
   };
 
+  // prevQuestion = (qNo) => {
+
+  // }
+
+  clickContinue = () => {
+    // if (this.state.clickCount === 0) {
+    //   alert("pls check");
+    //   this.setState({ clickCount: 1 });
+    //   return;
+    // }
+    // if (this.state.clickCount === 1) {
+    //   this.props.clickContinue();
+    //   this.setState({ clickCount: 0 });
+    //   return;
+    // }
+    switch (this.state.clickCount) {
+      case 0:
+        alert("pls check");
+        this.setState({ clickCount: 1 });
+        break;
+      case 1:
+        this.props.clickContinue();
+        this.setState({ clickCount: 0 });
+        break;
+      default:
+        console.log("Possible error in clickContinue");
+        break;
+    }
+  };
+
   render() {
     return (
       <div className="questioncreate__container">
         <h2>Create a Question Sheet</h2>
         <p>Questation only allows 5 questions for now.</p>
+        <p>
+          Warning: After pressing continue you won't be able to edit your
+          questions, so double check!
+        </p>
         <form
           onSubmit={this.onFormSubmit}
           style={{ display: "flex", flexDirection: "column" }}
@@ -68,7 +102,7 @@ class QuestionCreate extends React.Component {
           <button
             className="button questioncreate__continue"
             type="submit"
-            onClick={this.props.clickContinue}
+            onClick={this.clickContinue}
           >
             Continue
           </button>
