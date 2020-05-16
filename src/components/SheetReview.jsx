@@ -2,6 +2,7 @@ import React from "react";
 import SheetPreview from "./SheetPreview";
 import GenerateSheets from "./GenerateSheets";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import "../styles/SheetReview/index.css";
 import "../styles/misc/button.css";
@@ -16,11 +17,15 @@ class SheetReview extends React.Component {
           </button>
         </Link>
         <h2>Review Question Sheet</h2>
-        <SheetPreview />
+        <SheetPreview questions={this.props.questions} />
         <GenerateSheets />
       </div>
     );
   }
 }
 
-export default SheetReview;
+const mapStateToProps = state => {
+  return { questions: state.questionReducer.questions };
+};
+
+export default connect(mapStateToProps, {})(SheetReview);

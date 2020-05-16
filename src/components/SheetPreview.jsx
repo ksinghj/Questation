@@ -1,16 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
 import "../styles/SheetPreview/index.css";
 
-// This is the sheet preview
-// only questions display on a paper here
-// and thats it!!
-
-const SheetPreview = ({ props }) => {
-  let questions = ["1232/2", "56*7", "9+9", "23/3", "5-7"];
+const SheetPreview = ({ questions }) => {
+  let questionsArr = Object.values(questions);
   return (
     <div className="sheetpreview__container sheet">
       <ol className="sheetpreview__list">
-        {questions.map(q => {
+        {questionsArr.map(q => {
           return <li key={q}>{q}</li>;
         })}
       </ol>
@@ -25,4 +22,10 @@ const SheetPreview = ({ props }) => {
   );
 };
 
-export default SheetPreview;
+const mapStateToProps = state => {
+  return { questions: state.questionReducer.questions };
+};
+
+export default connect(mapStateToProps, {})(SheetPreview);
+
+//

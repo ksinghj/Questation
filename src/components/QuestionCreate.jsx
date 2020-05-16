@@ -11,7 +11,6 @@ class QuestionCreate extends React.Component {
 
   onFormSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     this.props.createQuestionSheet(this.state);
     history.push("/review");
   };
