@@ -2,16 +2,20 @@
     margin: 2em 0;
 } */
 
+.generatesheets__container input:focus {
+  outline: none;
+}
+
+.generatesheets__container input {
+  max-width: 50px;
+  text-align: center;
+}
+
+.generatesheets__container {
+  margin-bottom: 3em;
+}
+
 .generatesheets__button {
-    white-space: nowrap;
-    width: 200px;
-}
-
-.react-numeric-input input {
-    color: #ff6565;
-    max-width: 75px;
-}
-
-.react-numeric-input input:focus {
-    outline: none;
+  white-space: nowrap;
+  width: 200px;
 }
