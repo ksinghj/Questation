@@ -4,6 +4,7 @@ import "../styles/SheetPreview/index.css";
 
 const SheetPreview = ({ questions }) => {
   let questionsArr = Object.values(questions);
+
   return (
     <div className="sheetpreview__container sheet">
       <ol className="sheetpreview__list">

@@ -15,7 +15,7 @@ class SheetReview extends React.Component {
         <Link to="/create">
           <button
             type="button"
-            className="button"
+            className="sheetreview__button button"
             onClick={this.props.clickGoBack}
           >
             Go back
