@@ -1,9 +1,12 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
+// components
 import Navbar from "./Navbar";
 import QuestionCreate from "./QuestionCreate";
 import StartScreen from "./StartScreen";
 import SheetReview from "./SheetReview";
+import SheetLoading from "./SheetLoading";
+// npm
 import { PersistGate } from "redux-persist/integration/react";
 import history from "../history";
 import { Provider } from "react-redux";
@@ -11,7 +14,6 @@ import { persistStore, persistReducer } from "redux-persist";
 import { createStore, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import reducers from "../reducers";
-
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
 const persistConfig = {
@@ -43,6 +45,7 @@ class App extends React.Component {
               <Switch>
                 <Route path="/create" component={QuestionCreate} />
                 <Route path="/review" exact component={SheetReview} />
+                <Route path="/success" exact component={SheetLoading} />
               </Switch>
             </Router>
           </div>

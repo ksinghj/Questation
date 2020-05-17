@@ -1,4 +1,5 @@
 import React from "react";
+import history from "../history";
 
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
@@ -12,14 +13,20 @@ class GenerateSheets extends React.Component {
       if (this.state.students !== 0) {
         this.setState({ notZero: true });
       }
-    }, 750);
+    }, 500);
+  };
+
+  onFormSubmit = e => {
+    e.preventDefault();
+    // action: this.props.(this.state);
+    history.push("/success");
   };
 
   render() {
     return (
       <div className="generatesheets__container">
         <h3>Important:</h3>
-        <form>
+        <form onSubmit={this.onFormSubmit}>
           <label>Enter number of students in your class:</label>
           <input onChange={this.handleStudentNumberEnter} />
           <p>Generate unique sheets for {this.state.students} students.</p>
