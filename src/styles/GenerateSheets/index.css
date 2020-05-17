@@ -1,4 +1,17 @@
+/* .generatesheets__container p {
+    margin: 2em 0;
+} */
+
 .generatesheets__button {
     white-space: nowrap;
     width: 200px;
+}
+
+.react-numeric-input input {
+    color: #ff6565;
+    max-width: 75px;
+}
+
+.react-numeric-input input:focus {
+    outline: none;
 }
