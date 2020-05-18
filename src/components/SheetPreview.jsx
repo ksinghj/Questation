@@ -2,13 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import "../styles/SheetPreview/index.css";
 
-const SheetPreview = ({ questions }) => {
-  let questionsArr = Object.values(questions);
+const SheetPreview = ({ data }) => {
+  let arrToMap = Object.values(data);
 
   return (
     <div className="sheetpreview__container sheet">
       <ol className="sheetpreview__list">
-        {questionsArr.map(q => {
+        {arrToMap.map(q => {
           return <li key={q}>{q}</li>;
         })}
       </ol>

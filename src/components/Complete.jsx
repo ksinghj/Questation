@@ -1,6 +1,7 @@
 import React from "react";
 import { create, all } from "mathjs";
-
+import SheetPreview from "./SheetPreview";
+import { connect } from "react-redux";
 const config = {};
 const math = create(all, config);
 
@@ -12,11 +13,20 @@ class Complete extends React.Component {
   };
 
   render() {
-    return <div>Complete{this.mathjsTest()}</div>;
+    return (
+      <div>
+        Complete{this.mathjsTest()}
+        <SheetPreview data={this.props.questions} />
+      </div>
+    );
   }
 }
 
-export default Complete;
+const mapStateToProps = state => {
+  return { questions: state.questionReducer.questions };
+};
+
+export default connect(mapStateToProps, {})(Complete);
 
 // evaluate expressions
 // math.evaluate('sqrt(3^2 + 4^2)')        // 5

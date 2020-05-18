@@ -25,13 +25,12 @@ class SheetReview extends React.Component {
         <p>
           Warning: Pressing go back will erase the questions from your sheet.
         </p>
-        <SheetPreview questions={this.props.questions} />
+        <SheetPreview data={this.props.questions} />
         <GenerateSheets />
       </div>
     );
   }
 }
-
 const mapStateToProps = state => {
   return { questions: state.questionReducer.questions };
 };
