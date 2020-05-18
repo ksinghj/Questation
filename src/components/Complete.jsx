@@ -12,28 +12,19 @@ class Complete extends React.Component {
     console.log("mathjs test: ", test);
   };
 
-  renderStudentsSheets = students => {
-    // TODO: Convert number into incremented array (done), now MAKE IT A FUNCTION
-    // let arr = [];
-    // let count = 0;
-    // let num = 6;
-    // while (count < num) {
-    //   count++;
-    //   arr.push(count);
-    // }
-
-    // console.log(arr);
-    //let studentsArr = numToArr(students);
-
-    let studentsArr = [1, 2, 3, students];
-    studentsArr.map(student => {
-      return <SheetPreview data={this.props.questions} />;
+  renderStudentsSheets = number => {
+    let studentsArr = [];
+    let count = 0;
+    while (count < number) {
+      count++;
+      studentsArr.push(count);
+    }
+    return studentsArr.map(student => {
+      return <SheetPreview data={this.props.questions} key={student} />;
     });
-    return <SheetPreview data={this.props.questions} />;
   };
 
   render() {
-    console.log(this.props.students);
     return (
       <div>
         Complete{this.mathjsTest()}
