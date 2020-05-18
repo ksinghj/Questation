@@ -10,6 +10,8 @@ import {
   EDIT_STREAM,
   CREATE_QUESTION,
   GO_BACK,
+  CONTINUE,
+  ENTER_STUDENTS,
 } from "./types";
 
 export const signIn = userId => {
@@ -74,6 +76,13 @@ export const clickGoBack = () => {
 
 export const clickContinue = () => {
   return {
-    type: "CONTINUE",
+    type: CONTINUE,
+  };
+};
+
+export const enterStudents = students => {
+  return {
+    type: ENTER_STUDENTS,
+    payload: students,
   };
 };

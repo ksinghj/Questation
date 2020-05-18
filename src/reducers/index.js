@@ -20,7 +20,17 @@ const goBackClicked = (state = false, action) => {
   }
 };
 
+const studentsReducer = (state = 0, action) => {
+  switch (action.type) {
+    case "ENTER_STUDENTS":
+      return { ...state, students: action.payload };
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   questionReducer,
   goBackClicked,
+  studentsReducer,
 });

@@ -1,6 +1,7 @@
 import React from "react";
 import history from "../history";
-
+import { connect } from "react-redux";
+import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
 
@@ -12,14 +13,22 @@ class GenerateSheets extends React.Component {
     setTimeout(() => {
       if (this.state.students !== 0) {
         this.setState({ notZero: true });
+        // TODO: notZero should be false when state.students === 0
       }
     }, 500);
+    if (this.state.students === 0) {
+      this.setState({ notZero: false });
+    }
   };
 
   onFormSubmit = e => {
     e.preventDefault();
-    // action: this.props.(this.state);
     history.push("/success");
+    if (this.state.notZero) {
+      this.props.enterStudents(this.state.students);
+    } else {
+      alert("Enter students in the box");
+    }
   };
 
   render() {
@@ -43,4 +52,4 @@ class GenerateSheets extends React.Component {
   }
 }
 
-export default GenerateSheets;
+export default connect(null, { enterStudents })(GenerateSheets);

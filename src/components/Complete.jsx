@@ -9,21 +9,45 @@ class Complete extends React.Component {
   mathjsTest = () => {
     let scope = { a: 5 };
     let test = math.evaluate("a+3", scope);
-    console.log(test);
+    console.log("mathjs test: ", test);
+  };
+
+  renderStudentsSheets = students => {
+    // TODO: Convert number into incremented array (done), now MAKE IT A FUNCTION
+    // let arr = [];
+    // let count = 0;
+    // let num = 6;
+    // while (count < num) {
+    //   count++;
+    //   arr.push(count);
+    // }
+
+    // console.log(arr);
+    //let studentsArr = numToArr(students);
+
+    let studentsArr = [1, 2, 3, students];
+    studentsArr.map(student => {
+      return <SheetPreview data={this.props.questions} />;
+    });
+    return <SheetPreview data={this.props.questions} />;
   };
 
   render() {
+    console.log(this.props.students);
     return (
       <div>
         Complete{this.mathjsTest()}
-        <SheetPreview data={this.props.questions} />
+        {this.renderStudentsSheets(this.props.students)}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return { questions: state.questionReducer.questions };
+  return {
+    questions: state.questionReducer.questions,
+    students: state.studentsReducer.students,
+  };
 };
 
 export default connect(mapStateToProps, {})(Complete);
