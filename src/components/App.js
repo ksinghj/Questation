@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import QuestionCreate from "./QuestionCreate";
 import StartScreen from "./StartScreen";
 import SheetReview from "./SheetReview";
-import SheetLoading from "./SheetLoading";
+import Complete from "./Complete";
 // npm
 import { PersistGate } from "redux-persist/integration/react";
 import history from "../history";
@@ -45,7 +45,7 @@ class App extends React.Component {
               <Switch>
                 <Route path="/create" component={QuestionCreate} />
                 <Route path="/review" exact component={SheetReview} />
-                <Route path="/success" exact component={SheetLoading} />
+                <Route path="/success" exact component={Complete} />
               </Switch>
             </Router>
           </div>
