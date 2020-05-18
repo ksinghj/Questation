@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const questionReducer = (state = { k: "j" }, action) => {
+const questionReducer = (state = {}, action) => {
   switch (action.type) {
     case "CREATE_QUESTION":
       return { ...state, questions: action.payload };

@@ -27,7 +27,7 @@ class Complete extends React.Component {
   render() {
     return (
       <div>
-        Complete{this.mathjsTest()}
+        Complete
         {this.renderStudentsSheets(this.props.students)}
       </div>
     );
