@@ -5,7 +5,7 @@ import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
 
-import { extractNums } from "./extractNums";
+import { extractNums } from "./alg";
 
 class GenerateSheets extends React.Component {
   state = { students: 0, notZero: false };
