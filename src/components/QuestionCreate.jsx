@@ -5,6 +5,13 @@ import history from "../history";
 
 import "../styles/QuestionCreate/index.css";
 
+// Aaron Layton add new question on the fly possible ?
+// var questions = {
+//   input1: "question"
+// };
+// // new question
+// questions["input2"] = "question 2";
+
 class QuestionCreate extends React.Component {
   state = { input1: "", input2: "", input3: "", input4: "", input5: "" };
 
