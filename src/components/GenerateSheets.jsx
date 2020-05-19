@@ -5,6 +5,8 @@ import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
 
+import { extractNums } from "./extractNums";
+
 class GenerateSheets extends React.Component {
   state = { students: 0, notZero: false };
 
@@ -26,9 +28,9 @@ class GenerateSheets extends React.Component {
     history.push("/success");
     if (this.state.notZero) {
       this.props.enterStudents(this.state.students);
-    } else {
-      alert("Enter students in the box");
     }
+    // algorithm
+    console.log("Extracted inputs:", extractNums(this.props.questions.input1));
   };
 
   render() {
@@ -52,4 +54,8 @@ class GenerateSheets extends React.Component {
   }
 }
 
-export default connect(null, { enterStudents })(GenerateSheets);
+const mapStateToProps = state => {
+  return { questions: state.questionReducer.questions };
+};
+
+export default connect(mapStateToProps, { enterStudents })(GenerateSheets);
