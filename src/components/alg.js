@@ -12,17 +12,17 @@ const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
 let newArr = [];
 let extractedToArr;
 let replaceNums;
+let newNumber;
 
 export const extractNums = input => {
   extractedToArr = input.split(""); // returns ["4", "+", "5", "/", "2"]
   replaceNums = extractedToArr.map(currentMap => {
     if (numbers.includes(currentMap)) {
       // currentMap = randomNumber; // replaces currentMap with number, if a number
-      // let index = extractedToArr.indexOf(currentMap);
-      // newArr[index] = extractedToArr.splice(index, 1, currentMap);
-      return newArr.push(currentMap);
+      newNumber = randomNumber;
+      return newArr.push(newNumber);
     }
-    return newArr.push("NaN");
+    return newArr.push(currentMap);
   });
 
   console.log(`replaceNums = `, replaceNums);
