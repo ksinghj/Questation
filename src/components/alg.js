@@ -9,21 +9,29 @@
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
 
+let newArr = [];
+let extractedToArr;
+let replaceNums;
+
 export const extractNums = input => {
-  let extractedToArr = input.split("");
-  console.log(`extractedToArr = `, extractedToArr);
-  let replaceNums = extractedToArr.map(currentIdx => {
-    if (numbers.includes(currentIdx)) {
-      currentIdx = randomNumber;
-      console.log(`New currentIdx = `, currentIdx);
+  extractedToArr = input.split(""); // returns ["4", "+", "5", "/", "2"]
+  replaceNums = extractedToArr.map(currentMap => {
+    if (numbers.includes(currentMap)) {
+      // currentMap = randomNumber; // replaces currentMap with number, if a number
+      // let index = extractedToArr.indexOf(currentMap);
+      // newArr[index] = extractedToArr.splice(index, 1, currentMap);
+      return newArr.push(currentMap);
     }
+    return newArr.push("NaN");
   });
 
   console.log(`replaceNums = `, replaceNums);
+  console.log(`newArr = `, newArr);
 
-  // compare currentIdx to every value in numbers
+  // compare currentMap to every value in numbers
   // if they match, replace it with a random number from numbers
-  // if !match, move on to next currentIdx
+  // if !match, move on to next currentMap
+  // return new array (same operators different numbers)
 };
 
 // ???
