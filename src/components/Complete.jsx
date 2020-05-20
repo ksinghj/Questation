@@ -2,6 +2,7 @@ import React from "react";
 import { create, all } from "mathjs";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
+import { replaceNums } from "./alg";
 const config = {};
 const math = create(all, config);
 
@@ -21,7 +22,15 @@ class Complete extends React.Component {
       studentsArr.push(count);
     }
     return studentsArr.map(student => {
-      return <SheetPreview data={this.props.questions} key={student} />;
+      let questions = {};
+      // algorithm TODO: make alg run on every input for every student
+      questions.one = replaceNums(this.props.questions.input1);
+      questions.two = replaceNums(this.props.questions.input2);
+      questions.three = replaceNums(this.props.questions.input3);
+      questions.four = replaceNums(this.props.questions.input4);
+      questions.five = replaceNums(this.props.questions.input5);
+      console.log(`questions: `, questions);
+      return <SheetPreview data={questions} key={student} />;
     });
   };
 
