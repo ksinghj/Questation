@@ -13,8 +13,8 @@ class Complete extends React.Component {
     console.log("mathjs test: ", test);
   };
 
-  // number to arr length function (helper)
   renderStudentsSheets = number => {
+    // helper
     let studentsArr = [];
     let count = 0;
     while (count < number) {
@@ -23,7 +23,6 @@ class Complete extends React.Component {
     }
     return studentsArr.map(student => {
       let newQuestions = {};
-      // algorithm TODO: make alg run on every input for every student
       newQuestions.one = replaceNums(this.props.questions.input1);
       newQuestions.two = replaceNums(this.props.questions.input2);
       newQuestions.three = replaceNums(this.props.questions.input3);
@@ -37,7 +36,7 @@ class Complete extends React.Component {
   render() {
     return (
       <div>
-        Complete
+        Every student in your class now has a unique set of questions.
         {this.renderStudentsSheets(this.props.students)}
       </div>
     );

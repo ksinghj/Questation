@@ -23,7 +23,6 @@ export const replaceNums = input => {
     return newArr.push(currentMap);
   });
 
-  console.log(`newArr = `, newArr);
   return newArr;
 };
 

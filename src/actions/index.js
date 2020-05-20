@@ -86,3 +86,10 @@ export const enterStudents = students => {
     payload: students,
   };
 };
+
+export const createAClass = questions => {
+  return {
+    type: "CREATE_A_CLASS",
+    payload: questions,
+  };
+};
