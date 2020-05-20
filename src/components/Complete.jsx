@@ -12,6 +12,7 @@ class Complete extends React.Component {
     console.log("mathjs test: ", test);
   };
 
+  // number to arr length function (helper)
   renderStudentsSheets = number => {
     let studentsArr = [];
     let count = 0;
