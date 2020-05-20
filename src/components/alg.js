@@ -7,7 +7,7 @@
 
 // random number()
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+const randomNumber = () => numbers[Math.floor(Math.random() * numbers.length)];
 
 let newArr = [];
 let extractedToArr;
@@ -19,7 +19,7 @@ export const extractNums = input => {
   replaceNums = extractedToArr.map(currentMap => {
     if (numbers.includes(currentMap)) {
       // currentMap = randomNumber; // replaces currentMap with number, if a number
-      newNumber = randomNumber;
+      newNumber = randomNumber();
       return newArr.push(newNumber);
     }
     return newArr.push(currentMap);
