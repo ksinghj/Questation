@@ -29,8 +29,8 @@ class GenerateSheets extends React.Component {
     if (this.state.notZero) {
       this.props.enterStudents(this.state.students);
     }
-    // algorithm
-    console.log("Extracted inputs:", extractNums(this.props.questions.input1));
+    // algorithm TODO: make alg run on every input for every student
+    extractNums(this.props.questions.input1);
   };
 
   render() {
