@@ -39,6 +39,7 @@ class GenerateSheets extends React.Component {
         count++;
         numberAsArr.push(count);
       }
+
       return numberAsArr.forEach(arrItem => {
         // algorithm TODO: make alg run on every input for every student
         replaceNums(this.props.questions.input1);
