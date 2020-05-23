@@ -23,7 +23,7 @@ const goBackClicked = (state = false, action) => {
 const studentsReducer = (state = 0, action) => {
   switch (action.type) {
     case "ENTER_STUDENTS":
-      return { ...state, students: action.payload };
+      return (state = action.payload);
     default:
       return state;
   }

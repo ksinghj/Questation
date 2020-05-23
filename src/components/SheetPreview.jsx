@@ -9,6 +9,7 @@ const SheetPreview = ({ data }) => {
     <div className="sheetpreview__container sheet">
       <ol className="sheetpreview__list">
         {arrToMap.map(q => {
+          // TODO: new key to remove console error
           return <li key={q}>{q}</li>;
         })}
       </ol>
