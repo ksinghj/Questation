@@ -35,6 +35,7 @@ class GenerateSheets extends React.Component {
     let classArr = [];
 
     for (let index = 0; index < 5; index++) {
+      // TODO: students string to number ^
       let newQuestions = {};
       newQuestions.one = replaceNums(this.props.questions.input1);
       newQuestions.two = replaceNums(this.props.questions.input2);
