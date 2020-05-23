@@ -35,6 +35,8 @@ let persistor = persistStore(store);
 
 class App extends React.Component {
   render() {
+    // use this to clear store
+    // persistor.purge();
     return (
       <Provider store={store}>
         <PersistGate loading={<div>Loading...</div>} persistor={persistor}>

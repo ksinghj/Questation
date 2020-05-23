@@ -3,6 +3,7 @@ import { create, all } from "mathjs";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 import { replaceNums } from "./alg";
+import { createAClass } from "../actions";
 const config = {};
 const math = create(all, config);
 
@@ -29,6 +30,9 @@ class Complete extends React.Component {
       newQuestions.four = replaceNums(this.props.questions.input4);
       newQuestions.five = replaceNums(this.props.questions.input5);
       console.log(`questions: `, newQuestions);
+
+      this.props.createAClass(newQuestions);
+
       return <SheetPreview data={newQuestions} key={student} />;
     });
   };
@@ -47,10 +51,11 @@ const mapStateToProps = state => {
   return {
     questions: state.questionReducer.questions,
     students: state.studentsReducer.students,
+    class: state.classReducer,
   };
 };
 
-export default connect(mapStateToProps, {})(Complete);
+export default connect(mapStateToProps, { createAClass })(Complete);
 
 // evaluate expressions
 // math.evaluate('sqrt(3^2 + 4^2)')        // 5

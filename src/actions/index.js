@@ -12,6 +12,7 @@ import {
   GO_BACK,
   CONTINUE,
   ENTER_STUDENTS,
+  CREATE_A_CLASS,
 } from "./types";
 
 export const signIn = userId => {
@@ -89,7 +90,7 @@ export const enterStudents = students => {
 
 export const createAClass = questions => {
   return {
-    type: "CREATE_A_CLASS",
+    type: CREATE_A_CLASS,
     payload: questions,
   };
 };

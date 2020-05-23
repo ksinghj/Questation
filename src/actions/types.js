@@ -9,3 +9,4 @@ export const CREATE_QUESTION = "CREATE_QUESTION";
 export const GO_BACK = "GO_BACK";
 export const CONTINUE = "CONTINUE";
 export const ENTER_STUDENTS = "ENTER_STUDENTS";
+export const CREATE_A_CLASS = "CREATE_A_CLASS";
