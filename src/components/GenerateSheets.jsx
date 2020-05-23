@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
+import { createAClass } from "../actions";
+import { replaceNums } from "./alg";
 
 class GenerateSheets extends React.Component {
-  state = { students: 0, notZero: false };
+  state = { students: 0, notZero: false, classArr: null };
 
   handleStudentNumberEnter = e => {
     this.setState({ students: e.target.value });
@@ -29,6 +31,23 @@ class GenerateSheets extends React.Component {
     }
   };
 
+  classToStore = async () => {
+    let classArr = [];
+
+    for (let index = 0; index < 5; index++) {
+      let newQuestions = {};
+      newQuestions.one = replaceNums(this.props.questions.input1);
+      newQuestions.two = replaceNums(this.props.questions.input2);
+      newQuestions.three = replaceNums(this.props.questions.input3);
+      newQuestions.four = replaceNums(this.props.questions.input4);
+      newQuestions.five = replaceNums(this.props.questions.input5);
+      console.log(`questions: `, newQuestions);
+      classArr.push(newQuestions);
+    }
+    console.log(classArr);
+    await this.props.createAClass(classArr);
+  };
+
   render() {
     return (
       <div className="generatesheets__container">
@@ -41,6 +60,7 @@ class GenerateSheets extends React.Component {
             className="button generatesheets__button"
             type="submit"
             disabled={this.state.notZero ? false : true}
+            onClick={this.classToStore()}
           >
             Generate sheets
           </button>
@@ -54,4 +74,6 @@ const mapStateToProps = state => {
   return { questions: state.questionReducer.questions };
 };
 
-export default connect(mapStateToProps, { enterStudents })(GenerateSheets);
+export default connect(mapStateToProps, { enterStudents, createAClass })(
+  GenerateSheets
+);

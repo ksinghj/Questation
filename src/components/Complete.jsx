@@ -2,30 +2,10 @@ import React from "react";
 // import { create, all } from "mathjs";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
-import { replaceNums } from "./alg";
-import { createAClass } from "../actions";
 // const config = {};
 // const math = create(all, config);
 
 class Complete extends React.Component {
-  // addClassToStore
-  componentDidMount = async () => {
-    let classArr = [];
-
-    for (let index = 0; index < 5; index++) {
-      let newQuestions = {};
-      newQuestions.one = replaceNums(this.props.questions.input1);
-      newQuestions.two = replaceNums(this.props.questions.input2);
-      newQuestions.three = replaceNums(this.props.questions.input3);
-      newQuestions.four = replaceNums(this.props.questions.input4);
-      newQuestions.five = replaceNums(this.props.questions.input5);
-      console.log(`questions: `, newQuestions);
-      classArr.push(newQuestions);
-    }
-    console.log(classArr);
-    await this.props.createAClass(classArr);
-  };
-
   renderStudentsSheets = () => {
     return this.props.class.map(studentQs => {
       return <SheetPreview data={studentQs} />;
@@ -50,7 +30,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { createAClass })(Complete);
+export default connect(mapStateToProps, {})(Complete);
 
 // evaluate expressions
 // math.evaluate('sqrt(3^2 + 4^2)')        // 5
