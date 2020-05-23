@@ -1,28 +1,18 @@
 import React from "react";
-import { create, all } from "mathjs";
+// import { create, all } from "mathjs";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 import { replaceNums } from "./alg";
 import { createAClass } from "../actions";
-const config = {};
-const math = create(all, config);
+// const config = {};
+// const math = create(all, config);
 
 class Complete extends React.Component {
-  mathjsTest = () => {
-    let scope = { a: 5 };
-    let test = math.evaluate("a+3", scope);
-    console.log("mathjs test: ", test);
-  };
+  // addClassToStore
+  componentDidMount = async () => {
+    let classArr = [];
 
-  renderStudentsSheets = number => {
-    // helper
-    let studentsArr = [];
-    let count = 0;
-    while (count < number) {
-      count++;
-      studentsArr.push(count);
-    }
-    return studentsArr.map(student => {
+    for (let index = 0; index < 5; index++) {
       let newQuestions = {};
       newQuestions.one = replaceNums(this.props.questions.input1);
       newQuestions.two = replaceNums(this.props.questions.input2);
@@ -30,10 +20,15 @@ class Complete extends React.Component {
       newQuestions.four = replaceNums(this.props.questions.input4);
       newQuestions.five = replaceNums(this.props.questions.input5);
       console.log(`questions: `, newQuestions);
+      classArr.push(newQuestions);
+    }
+    console.log(classArr);
+    await this.props.createAClass(classArr);
+  };
 
-      this.props.createAClass(newQuestions);
-
-      return <SheetPreview data={newQuestions} key={student} />;
+  renderStudentsSheets = () => {
+    return this.props.class.map(studentQs => {
+      return <SheetPreview data={studentQs} />;
     });
   };
 
@@ -41,7 +36,7 @@ class Complete extends React.Component {
     return (
       <div>
         Every student in your class now has a unique set of questions.
-        {this.renderStudentsSheets(this.props.students)}
+        {this.renderStudentsSheets()}
       </div>
     );
   }

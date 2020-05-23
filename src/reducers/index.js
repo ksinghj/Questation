@@ -32,7 +32,7 @@ const studentsReducer = (state = 0, action) => {
 const classReducer = (state = [], action) => {
   switch (action.type) {
     case "CREATE_A_CLASS":
-      return [...state, action.payload];
+      return (state = action.payload);
     default:
       return state;
   }
