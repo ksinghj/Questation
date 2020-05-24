@@ -1,14 +1,17 @@
 import React from "react";
 import { connect } from "react-redux";
 import SheetPreview from "./SheetPreview";
-// const config = {};
-// const math = create(all, config);
-// import { create, all } from "mathjs";
+import { create, all } from "mathjs";
+// mathjs config
+const config = {};
+const math = create(all, config);
 
 class Answers extends React.Component {
   renderSheets = () => {
-    return this.props.class.map((studentQs, index) => {
-      return <SheetPreview data={studentQs} sheet={index + 1} answers />;
+    return this.props.class.map((question, index) => {
+      let ans = math.evaluate("4+4");
+      console.log(ans);
+      return <SheetPreview data={question} sheet={index + 1} answers />;
     });
   };
 

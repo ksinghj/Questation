@@ -31,7 +31,7 @@ class Complete extends React.Component {
             <button
               className="button whitespace-nw"
               type="button"
-              onClick={this.props.answers}
+              onClick={this.props.answers} // this will populate answer reducer for use in Answers.jsx
             >
               Answer sheet
             </button>
