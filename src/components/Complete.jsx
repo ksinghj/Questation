@@ -9,7 +9,7 @@ import "../styles/misc/button.css";
 class Complete extends React.Component {
   renderSheets = () => {
     return this.props.class.map((q, index) => {
-      return <SheetPreview data={q} sheet={index + 1} answers={false} />;
+      return <SheetPreview answersBool={false} data={q} sheet={index + 1} />;
     });
   };
 
@@ -26,11 +26,7 @@ class Complete extends React.Component {
             PDF view
           </button>
           <Link to="/answers">
-            <button
-              className="button whitespace-nw"
-              type="button"
-              onClick={this.props.class.map(q => this.props.answers(q))} // this will populate answer reducer for use in Answers.jsx
-            >
+            <button className="button whitespace-nw" type="button">
               Answer sheet
             </button>
           </Link>

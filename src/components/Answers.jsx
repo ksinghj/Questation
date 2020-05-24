@@ -11,7 +11,7 @@ class Answers extends React.Component {
     return this.props.class.map((question, index) => {
       let ans = math.evaluate("4+4");
       console.log(ans);
-      return <SheetPreview data={question} sheet={index + 1} answers />;
+      return <SheetPreview data={question} sheet={index + 1} answersBool />;
     });
   };
 

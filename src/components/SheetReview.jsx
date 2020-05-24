@@ -25,7 +25,7 @@ class SheetReview extends React.Component {
         <p>
           Warning: Pressing go back will erase the questions from your sheet.
         </p>
-        <SheetPreview data={this.props.questions} answers={false} />
+        <SheetPreview answersBool={false} data={this.props.questions} />
         <GenerateSheets />
       </div>
     );
