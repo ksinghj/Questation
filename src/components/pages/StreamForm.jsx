@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form"; // TODO: Use redux form in QuestionCreate
+import { Field, reduxForm } from "redux-form"; // TODO: Delete this file
 
 class StreamForm extends React.Component {
   renderError = ({ error, touched }) => {

@@ -19,7 +19,7 @@ class GoogleAuth extends React.Component {
     });
   }
 
-  onAuthChange = (isSignedIn) => {
+  onAuthChange = isSignedIn => {
     if (isSignedIn) {
       this.props.signIn(this.auth.currentUser.get().getId());
     } else {
@@ -43,7 +43,8 @@ class GoogleAuth extends React.Component {
         return (
           <button
             onClick={this.onSignOutClick}
-            className="ui red google button">
+            className="ui red google button"
+          >
             <i className="google icon" />
             Sign Out
           </button>
@@ -52,7 +53,8 @@ class GoogleAuth extends React.Component {
         return (
           <button
             onClick={this.onSignInClick}
-            className="ui green google button">
+            className="ui green google button"
+          >
             <i className="google icon" />
             Sign in with Google
           </button>
@@ -65,7 +67,7 @@ class GoogleAuth extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return { isSignedIn: state.auth.isSignedIn };
 };
 
@@ -73,5 +75,3 @@ export default connect(mapStateToProps, {
   signOut,
   signIn,
 })(GoogleAuth);
-
-// TODO: Add this file to HELPERS when complete for other apps REDUX VERSION
