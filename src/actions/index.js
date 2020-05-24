@@ -95,9 +95,9 @@ export const createAClass = questions => {
   };
 };
 
-export const answers = questions => {
+export const answers = question => {
   return {
     type: "ANSWERS",
-    payload: answers,
+    payload: question,
   };
 };

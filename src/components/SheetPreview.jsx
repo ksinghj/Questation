@@ -3,12 +3,10 @@ import { connect } from "react-redux";
 import "../styles/SheetPreview/index.css";
 
 class SheetPreview extends React.Component {
-  // props: data, sheet, answers
-
   renderSheets = () => {
     const { data, sheet, answers } = this.props;
-    let arrToMap = Object.values(data);
     if (!answers) {
+      let arrToMap = Object.values(data);
       return (
         <div className="sheetpreview__container sheet">
           <h4 className="sheetpreview__sheet-number">
@@ -31,6 +29,7 @@ class SheetPreview extends React.Component {
       );
     }
     // answers
+    let arrToMap = ["4+4", "33/3"]; // this should be answersReducer
     return (
       <div className="sheetpreview__container sheet">
         <h4 className="sheetpreview__sheet-number">
@@ -58,4 +57,8 @@ class SheetPreview extends React.Component {
   }
 }
 
-export default connect(null, {})(SheetPreview);
+const mapStateToProps = state => {
+  return { answers: state.answersReducer };
+};
+
+export default connect(mapStateToProps, {})(SheetPreview);

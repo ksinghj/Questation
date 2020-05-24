@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+// import mathjs
 
 const questionReducer = (state = {}, action) => {
   switch (action.type) {
@@ -38,7 +39,7 @@ const classReducer = (state = [], action) => {
   }
 };
 
-const answersReducer = (state = null, action) => {
+const answersReducer = (state = [], action) => {
   switch (action.type) {
     case "ANSWERS":
       console.log("Answers called");
