@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 import { answers } from "../actions";
@@ -6,9 +7,11 @@ import "../styles/Complete/index.css";
 import "../styles/misc/button.css";
 
 class Complete extends React.Component {
-  renderStudentsSheets = () => {
+  renderSheets = () => {
     return this.props.class.map((studentQs, index) => {
-      return <SheetPreview data={studentQs} sheet={index + 1} />;
+      return (
+        <SheetPreview data={studentQs} sheet={index + 1} answers={false} />
+      );
     });
   };
 
@@ -24,23 +27,26 @@ class Complete extends React.Component {
           <button className="button" type="button">
             PDF view
           </button>
-          <button
-            className="button whitespace-nw"
-            type="button"
-            onClick={this.props.answers}
-          >
-            Answer sheet
-          </button>
+          <Link to="/answers">
+            <button
+              className="button whitespace-nw"
+              type="button"
+              onClick={this.props.answers}
+            >
+              Answer sheet
+            </button>
+          </Link>
           <button className="button whitespace-nw" type="button">
             Create new sheet
           </button>
         </div>
         <p className="complete__info">
           Every student in your class now has a unique set of questions, see
-          below. You can print these through the PDF viewer, and view the answer
-          sheet using the buttons above.
+          below. You can print these through the <strong>PDF viewer</strong>,
+          view the <strong>answer sheet</strong> and create a new set of
+          question sheets using the buttons above.
         </p>
-        {this.renderStudentsSheets()}
+        {this.renderSheets()}
       </div>
     );
   }
