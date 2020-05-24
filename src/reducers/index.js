@@ -38,9 +38,20 @@ const classReducer = (state = [], action) => {
   }
 };
 
+const answersReducer = (state = null, action) => {
+  switch (action.type) {
+    case "ANSWERS":
+      console.log("Answers called");
+      return (state = action.payload);
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   questionReducer,
   goBackClicked,
   studentsReducer,
   classReducer,
+  answersReducer,
 });

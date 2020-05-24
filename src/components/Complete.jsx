@@ -1,9 +1,7 @@
 import React from "react";
-// import { create, all } from "mathjs";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
-// const config = {};
-// const math = create(all, config);
+import { answers } from "../actions";
 import "../styles/Complete/index.css";
 import "../styles/misc/button.css";
 
@@ -22,17 +20,15 @@ class Complete extends React.Component {
   render() {
     return (
       <div className="complete__container">
-        {
-          //  <p>
-          //   View the answer sheet{" "}
-          //   <span className="complete__answersheet-span">here.</span>
-          // </p>
-        }
         <div className="complete__action-buttons">
           <button className="button" type="button">
             PDF view
           </button>
-          <button className="button whitespace-nw" type="button">
+          <button
+            className="button whitespace-nw"
+            type="button"
+            onClick={this.props.answers}
+          >
             Answer sheet
           </button>
           <button className="button whitespace-nw" type="button">
@@ -58,4 +54,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(Complete);
+export default connect(mapStateToProps, { answers })(Complete);

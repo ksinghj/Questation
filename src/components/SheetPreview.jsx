@@ -25,8 +25,4 @@ const SheetPreview = ({ data, sheet }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return { questions: state.questionReducer.questions };
-};
-
-export default connect(mapStateToProps, {})(SheetPreview);
+export default connect(null, {})(SheetPreview);

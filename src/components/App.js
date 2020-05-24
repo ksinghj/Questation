@@ -6,6 +6,7 @@ import QuestionCreate from "./QuestionCreate";
 import StartScreen from "./StartScreen";
 import SheetReview from "./SheetReview";
 import Complete from "./Complete";
+import Answers from "./Answers";
 // npm
 import { PersistGate } from "redux-persist/integration/react";
 import history from "../history";
@@ -51,7 +52,7 @@ class App extends React.Component {
                 {
                   // TODO: v Answers component
                 }
-                <Route path="/success" exact component={Complete} />
+                <Route path="/answers" exact component={Answers} />
               </Switch>
             </Router>
           </div>

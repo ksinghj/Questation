@@ -94,3 +94,10 @@ export const createAClass = questions => {
     payload: questions,
   };
 };
+
+export const answers = () => {
+  return {
+    type: "ANSWERS",
+    payload: answers,
+  };
+};
