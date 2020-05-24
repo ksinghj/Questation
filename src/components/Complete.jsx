@@ -10,9 +10,14 @@ import "../styles/misc/button.css";
 class Complete extends React.Component {
   renderStudentsSheets = () => {
     return this.props.class.map(studentQs => {
-      return <SheetPreview data={studentQs} />;
+      return <SheetPreview data={studentQs} />; // student={}
     });
   };
+
+  // restore scroll so options are visible
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     return (
@@ -28,6 +33,9 @@ class Complete extends React.Component {
           </button>
           <button className="button whitespace-nw" type="button">
             Answer sheet
+          </button>
+          <button className="button whitespace-nw" type="button">
+            Create new sheet
           </button>
         </div>
         {this.renderStudentsSheets()}

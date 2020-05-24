@@ -54,7 +54,12 @@ class GenerateSheets extends React.Component {
         <h3>Important:</h3>
         <form onSubmit={this.onFormSubmit}>
           <label>Enter number of students in your class:</label>
-          <input onChange={this.handleStudentNumberEnter} type="number" />
+          <input
+            onChange={this.handleStudentNumberEnter}
+            type="number"
+            min="0"
+            max="75"
+          />
           <p>Generate unique sheets for {this.state.students} students.</p>
           <button
             className="button generatesheets__button"
