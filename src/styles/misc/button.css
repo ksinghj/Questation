@@ -17,7 +17,7 @@
 }
 
 button:disabled,
-button[disabled]{
+button[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
@@ -25,8 +25,12 @@ button[disabled]{
 }
 
 button:disabled,
-button[disabled]:hover{
+button[disabled]:hover {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
+}
+
+.whitespace-nw {
+  white-space: nowrap;
 }

@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 // const config = {};
 // const math = create(all, config);
 
+import "../styles/misc/button.css";
+
 class Complete extends React.Component {
   renderStudentsSheets = () => {
     return this.props.class.map(studentQs => {
@@ -15,7 +17,19 @@ class Complete extends React.Component {
   render() {
     return (
       <div>
-        Every student in your class now has a unique set of questions.
+        <p>Every student in your class now has a unique set of questions.</p>
+        <p>
+          View the answer sheet{" "}
+          <span className="complete__answersheet-span">here.</span>
+        </p>
+        <div className="complete__action-buttons">
+          <button className="button" type="button">
+            PDF view
+          </button>
+          <button className="button whitespace-nw" type="button">
+            Answer sheet
+          </button>
+        </div>
         {this.renderStudentsSheets()}
       </div>
     );
