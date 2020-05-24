@@ -1,5 +1,5 @@
 import _ from "lodash";
-// TODO: Change streams to question as we code along
+// TODO: Delete this file
 import {
   FETCH_STREAMS,
   FETCH_STREAM,
