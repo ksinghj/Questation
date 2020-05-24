@@ -4,7 +4,7 @@ import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 // const config = {};
 // const math = create(all, config);
-
+import "../styles/Complete/index.css";
 import "../styles/misc/button.css";
 
 class Complete extends React.Component {
@@ -21,12 +21,13 @@ class Complete extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Every student in your class now has a unique set of questions.</p>
-        <p>
-          View the answer sheet{" "}
-          <span className="complete__answersheet-span">here.</span>
-        </p>
+      <div className="complete__container">
+        {
+          //  <p>
+          //   View the answer sheet{" "}
+          //   <span className="complete__answersheet-span">here.</span>
+          // </p>
+        }
         <div className="complete__action-buttons">
           <button className="button" type="button">
             PDF view
@@ -38,6 +39,11 @@ class Complete extends React.Component {
             Create new sheet
           </button>
         </div>
+        <p className="complete__info">
+          Every student in your class now has a unique set of questions, see
+          below. You can print these through the PDF viewer, and view the answer
+          sheet using the buttons above.
+        </p>
         {this.renderStudentsSheets()}
       </div>
     );
