@@ -48,6 +48,10 @@ class App extends React.Component {
                 <Route path="/create" component={QuestionCreate} />
                 <Route path="/review" exact component={SheetReview} />
                 <Route path="/success" exact component={Complete} />
+                {
+                  // TODO: v Answers component
+                }
+                <Route path="/success" exact component={Complete} />
               </Switch>
             </Router>
           </div>

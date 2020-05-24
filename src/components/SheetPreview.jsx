@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import "../styles/SheetPreview/index.css";
 
-const SheetPreview = ({ data }) => {
+const SheetPreview = ({ data, sheet }) => {
   let arrToMap = Object.values(data);
 
   return (
     <div className="sheetpreview__container sheet">
+      <h4 className="sheetpreview__sheet-number">Sheet {sheet}</h4>
       <ol className="sheetpreview__list">
         {arrToMap.map(q => {
           // TODO: new key to remove console error

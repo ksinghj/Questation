@@ -9,8 +9,8 @@ import "../styles/misc/button.css";
 
 class Complete extends React.Component {
   renderStudentsSheets = () => {
-    return this.props.class.map(studentQs => {
-      return <SheetPreview data={studentQs} />; // student={}
+    return this.props.class.map((studentQs, index) => {
+      return <SheetPreview data={studentQs} sheet={index + 1} />;
     });
   };
 

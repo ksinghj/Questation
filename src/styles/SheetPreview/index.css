@@ -6,6 +6,11 @@
   max-width: 450px;
 }
 
+.sheetpreview__sheet-number {
+  text-align: center;
+  padding-top: 1em;
+}
+
 .sheetpreview__list {
   margin: 1em 2em 5em 2em;
 }
