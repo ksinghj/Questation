@@ -49,14 +49,13 @@ const evaluateAnswer = questionAsObjwArrs => {
 
 let answersArr = [];
 
-export async function getAnswer(arr) {
+export function getAnswer(arr) {
   let manipulated = evaluateAnswer(arr);
-  answersArr = await manipulated.map(expr => {
+  answersArr = manipulated.map(expr => {
     let ans = math.evaluate(expr);
     console.log(`ans = `, ans);
     return answersArr.push(ans);
   });
-  // console.log(answersArr);
 }
 
 // ???
