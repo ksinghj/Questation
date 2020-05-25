@@ -28,8 +28,8 @@ import "../styles/SheetPreview/index.css";
 class SheetPreview extends React.Component {
   render() {
     const { data, sheet, answersBool } = this.props;
-    let arrToMap = Object.values(data);
     if (!answersBool) {
+      let arrToMap = Object.values(data);
       return (
         <div className="sheetpreview__container sheet">
           <h4 className="sheetpreview__sheet-number">
@@ -52,25 +52,17 @@ class SheetPreview extends React.Component {
     }
     // answers
     return (
-      <div className="sheetpreview__container sheet">
-        <h4 className="sheetpreview__sheet-number">
-          {answersBool ? "Answers" : "Sheet"} {sheet}
-        </h4>
-        <ol className="sheetpreview__list">
-          {this.props.answers.map(arr => {
-            return arr.map((ans, index) => {
-              console.log(`ans`, ans);
-              return <li key={index}>{ans}</li>;
-            }); // needds chunking
-          })}
-        </ol>
-        <div className="sheetpreview__watermark">
-          <img
-            className="watermark__image"
-            src={require("../img/questation-logo.png")}
-            alt="Questation logo"
-          />
-        </div>
+      <div>
+        {this.props.answers.map(element => {
+          return (
+            <ol>
+              {element.map(element => {
+                console.log(element);
+                return <li>{element}</li>;
+              })}
+            </ol>
+          );
+        })}
       </div>
     );
   }
