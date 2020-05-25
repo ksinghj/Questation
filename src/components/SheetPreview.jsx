@@ -51,17 +51,15 @@ class SheetPreview extends React.Component {
       );
     }
     // answers
-    for (let index = 0; index < this.props.answers.length; index++) {
+    return this.props.answers.map(function (subarray) {
       return (
         <div className="sheetpreview__container sheet">
           <h4 className="sheetpreview__sheet-number">
             {answersBool ? "Answers" : "Sheet"} {sheet}
           </h4>
           <ol className="sheetpreview__list">
-            {this.props.answers.map(set => {
-              return set.map(q => {
-                return <li>{q}</li>;
-              });
+            {subarray.map(q => {
+              return <li>{q}</li>;
             })}
           </ol>
           <div className="sheetpreview__watermark">
@@ -73,7 +71,7 @@ class SheetPreview extends React.Component {
           </div>
         </div>
       );
-    }
+    });
   }
 }
 
