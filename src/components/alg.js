@@ -23,23 +23,31 @@ export const replaceNums = input => {
   return newArr;
 };
 
-let noObj;
+// let noObj;
 let answersArr = [];
+let newArr = [];
 
 export const evaluateAnswer = questionAsObjwArrs => {
-  // let newArr = [];
   // questionAsObjwArrs.map(set => {
   //   noObj = Object.values(set);
   //   return newArr.push(noObj);
   // });
-  let newArr = Object.values(questionAsObjwArrs);
-  newArr.map(setArr => {
-    // from [[q], [q], [q]] => [q, q, q] (remove nest)
-    return setArr.map(q => {
-      q.join("");
-      return answersArr.push(q);
-    });
+  let noNest = Object.values(questionAsObjwArrs);
+  newArr.push(noNest);
+
+  let string = newArr.map(arr => {
+    return (arr = arr.join(""));
   });
+
+  answersArr.push(string);
+
+  // newArr.map(setArr => {
+  //   // from [[q], [q], [q]] => [q, q, q] (remove nest)
+  //   return setArr.map(q => {
+  //     q.join("");
+  //     return answersArr.push(q);
+  //   });
+  // });
 
   console.log(answersArr);
 
