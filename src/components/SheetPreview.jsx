@@ -51,20 +51,27 @@ class SheetPreview extends React.Component {
       );
     }
     // answers
-    return (
-      <div>
-        {this.props.answers.map(element => {
-          return (
-            <ol>
-              {element.map(element => {
-                console.log(element);
-                return <li>{element}</li>;
-              })}
-            </ol>
-          );
-        })}
-      </div>
-    );
+    return this.props.answers.map(set => {
+      return (
+        <div className="sheetpreview__container sheet">
+          <h4 className="sheetpreview__sheet-number">
+            {answersBool ? "Answers" : "Sheet"} {sheet}
+          </h4>
+          <ol className="sheetpreview__list">
+            {set.map(q => {
+              return <li>{q}</li>;
+            })}
+          </ol>
+          <div className="sheetpreview__watermark">
+            <img
+              className="watermark__image"
+              src={require("../img/questation-logo.png")}
+              alt="Questation logo"
+            />
+          </div>
+        </div>
+      );
+    });
   }
 }
 
