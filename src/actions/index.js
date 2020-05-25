@@ -95,9 +95,9 @@ export const createAClass = questions => {
   };
 };
 
-export const answers = question => {
+export const answers = evaldArr => {
   return {
     type: "ANSWERS",
-    payload: question,
+    payload: evaldArr,
   };
 };

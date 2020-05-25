@@ -43,7 +43,7 @@ const answersReducer = (state = [], action) => {
   switch (action.type) {
     case "ANSWERS":
       console.log("Answers called");
-      return (state = action.payload);
+      return [...state, action.payload];
     default:
       return state;
   }

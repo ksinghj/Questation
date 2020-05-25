@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
-import { createAClass } from "../actions";
+import { createAClass, answers } from "../actions";
 import { replaceNums, getAnswer } from "./alg";
 
 class GenerateSheets extends React.Component {
@@ -44,7 +44,8 @@ class GenerateSheets extends React.Component {
       newQuestions.five = replaceNums(this.props.questions.input5);
       classArr.push(newQuestions);
 
-      getAnswer(newQuestions);
+      let ans = getAnswer(newQuestions);
+      this.props.answers(ans);
     }
     await this.props.createAClass(classArr);
   };
@@ -82,6 +83,8 @@ const mapStateToProps = state => {
   return { questions: state.questionReducer.questions };
 };
 
-export default connect(mapStateToProps, { enterStudents, createAClass })(
-  GenerateSheets
-);
+export default connect(mapStateToProps, {
+  enterStudents,
+  createAClass,
+  answers,
+})(GenerateSheets);
