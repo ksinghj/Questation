@@ -1,10 +1,7 @@
-// const getNumFromStr = () => {
-//   let result = "3+6/2+45-3";
-//   console.log(`Result: ` + result.match(/\d+/g));
-// };
-
-// See board for info
-
+// import { create, all } from "mathjs";
+// // mathjs config
+// const config = {};
+// const math = create(all, config);
 // random number()
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const randomNumber = () => numbers[Math.floor(Math.random() * numbers.length)];
@@ -24,6 +21,30 @@ export const replaceNums = input => {
   });
 
   return newArr;
+};
+
+let noObj;
+let answersArr = [];
+
+export const evaluateAnswer = questionAsObjwArrs => {
+  // let newArr = [];
+  // questionAsObjwArrs.map(set => {
+  //   noObj = Object.values(set);
+  //   return newArr.push(noObj);
+  // });
+  let newArr = Object.values(questionAsObjwArrs);
+  newArr.map(setArr => {
+    // from [[q], [q], [q]] => [q, q, q] (remove nest)
+    return setArr.map(q => {
+      q.join("");
+      return answersArr.push(q);
+    });
+  });
+
+  console.log(answersArr);
+
+  // backToString = questionAsObjwArrs.join(""); // ["4", "+", "3"] => ["4+3"]
+  // newArr.push(backToString);
 };
 
 // ???

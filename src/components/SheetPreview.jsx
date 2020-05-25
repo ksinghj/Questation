@@ -10,9 +10,8 @@ const SheetPreview = ({ data, sheet, answersBool }) => {
         {answersBool ? "Answers" : "Sheet"} {sheet}
       </h4>
       <ol className="sheetpreview__list">
-        {arrToMap.map(q => {
-          // TODO: new key to remove console error
-          return <li key={q}>{q}</li>;
+        {arrToMap.map((q, index) => {
+          return <li key={index}>{q}</li>;
         })}
       </ol>
       <div className="sheetpreview__watermark">
@@ -26,8 +25,8 @@ const SheetPreview = ({ data, sheet, answersBool }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return { answers: state.answersReducer };
-};
+// const mapStateToProps = state => {
+//   return { answers: state.answersReducer };
+// };
 
-export default connect(mapStateToProps, {})(SheetPreview);
+export default connect(null, {})(SheetPreview);

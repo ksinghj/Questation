@@ -5,7 +5,7 @@ import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
 import { createAClass } from "../actions";
-import { replaceNums } from "./alg";
+import { replaceNums, evaluateAnswer } from "./alg";
 
 class GenerateSheets extends React.Component {
   state = { students: 0, notZero: false, classArr: null };
@@ -31,7 +31,8 @@ class GenerateSheets extends React.Component {
     }
   };
 
-  classToStore = async () => {
+  classSheets = async () => {
+    // class to store
     let classArr = [];
 
     for (let index = 0; index < this.state.students; index++) {
@@ -41,11 +42,12 @@ class GenerateSheets extends React.Component {
       newQuestions.three = replaceNums(this.props.questions.input3);
       newQuestions.four = replaceNums(this.props.questions.input4);
       newQuestions.five = replaceNums(this.props.questions.input5);
-      console.log(`questions: `, newQuestions);
+      evaluateAnswer(newQuestions);
       classArr.push(newQuestions);
     }
-    console.log(classArr);
     await this.props.createAClass(classArr);
+
+    // evaluateAnswer(classArr);
   };
 
   render() {
@@ -65,7 +67,9 @@ class GenerateSheets extends React.Component {
             className="button generatesheets__button"
             type="submit"
             disabled={this.state.notZero ? false : true}
-            onClick={this.classToStore()}
+            onClick={() => {
+              this.classSheets();
+            }}
           >
             Generate sheets
           </button>

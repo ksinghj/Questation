@@ -10,7 +10,7 @@ class Answers extends React.Component {
   renderSheets = () => {
     return this.props.class.map((question, index) => {
       let ans = math.evaluate("4+4");
-      console.log(ans);
+      console.log(`mathjs test ans: `, ans);
       return <SheetPreview data={question} sheet={index + 1} answersBool />;
     });
   };
