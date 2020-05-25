@@ -38,7 +38,6 @@ const evaluateAnswer = questionAsObjwArrs => {
     return nestedArr.map(q => {
       let asString = q.join("");
       questionsArr.push(asString);
-      console.log(questionsArr);
       return questionsArr;
     });
   });
@@ -51,7 +50,6 @@ export function getAnswer(arr) {
   let manipulated = evaluateAnswer(arr);
   return manipulated.map(expr => {
     let ans = math.evaluate(expr);
-    console.log(`ans = `, ans);
     return ans;
   });
 }
