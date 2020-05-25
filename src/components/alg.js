@@ -1,7 +1,8 @@
-// import { create, all } from "mathjs";
-// // mathjs config
-// const config = {};
-// const math = create(all, config);
+import _ from "lodash";
+import { create, all } from "mathjs";
+// mathjs config
+const config = {};
+const math = create(all, config);
 // random number()
 const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const randomNumber = () => numbers[Math.floor(Math.random() * numbers.length)];
@@ -24,21 +25,39 @@ export const replaceNums = input => {
 };
 
 // let noObj;
-let answersArr = [];
+let questionsArr = [];
+let chunked = [];
 
-export const evaluateAnswer = questionAsObjwArrs => {
+const evaluateAnswer = questionAsObjwArrs => {
   let newArr = [];
 
   let noObj = Object.values(questionAsObjwArrs);
   newArr.push(noObj);
 
-  return newArr.map(nestedArr => {
+  newArr.map(nestedArr => {
     return nestedArr.map(q => {
       let asString = q.join("");
-      return answersArr.push(asString);
+      questionsArr.push(asString);
+      console.log(questionsArr);
+      return questionsArr;
     });
   });
+
+  chunked = _.chunk(questionsArr, 5);
+  return chunked;
 };
+
+let answersArr = [];
+
+export async function getAnswer(arr) {
+  let manipulated = evaluateAnswer(arr);
+  answersArr = await manipulated.map(expr => {
+    let ans = math.evaluate(expr);
+    console.log(`ans = `, ans);
+    return answersArr.push(ans);
+  });
+  // console.log(answersArr);
+}
 
 // ???
 // math.evaluate()

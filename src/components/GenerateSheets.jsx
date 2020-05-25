@@ -5,7 +5,7 @@ import { enterStudents } from "../actions";
 import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
 import { createAClass } from "../actions";
-import { replaceNums, evaluateAnswer } from "./alg";
+import { replaceNums, getAnswer } from "./alg";
 
 class GenerateSheets extends React.Component {
   state = { students: 0, notZero: false, classArr: null };
@@ -43,11 +43,10 @@ class GenerateSheets extends React.Component {
       newQuestions.four = replaceNums(this.props.questions.input4);
       newQuestions.five = replaceNums(this.props.questions.input5);
       classArr.push(newQuestions);
-      evaluateAnswer(newQuestions);
+
+      getAnswer(newQuestions);
     }
     await this.props.createAClass(classArr);
-
-    // evaluateAnswer(classArr);
   };
 
   render() {
