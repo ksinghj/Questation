@@ -42,8 +42,8 @@ class GenerateSheets extends React.Component {
       newQuestions.three = replaceNums(this.props.questions.input3);
       newQuestions.four = replaceNums(this.props.questions.input4);
       newQuestions.five = replaceNums(this.props.questions.input5);
-      evaluateAnswer(newQuestions);
       classArr.push(newQuestions);
+      evaluateAnswer(newQuestions);
     }
     await this.props.createAClass(classArr);
 
