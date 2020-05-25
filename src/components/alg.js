@@ -47,14 +47,12 @@ const evaluateAnswer = questionAsObjwArrs => {
   return chunked;
 };
 
-let answersArr = [];
-
 export function getAnswer(arr) {
   let manipulated = evaluateAnswer(arr);
-  answersArr = manipulated.map(expr => {
+  return manipulated.map(expr => {
     let ans = math.evaluate(expr);
     console.log(`ans = `, ans);
-    return answersArr.push(ans);
+    return ans;
   });
 }
 
