@@ -9,7 +9,7 @@
   background: #fff;
 }
 
-.container section.main {
+section.main {
   margin: 20vh 0;
   display: -ms-grid;
   display: grid;
@@ -21,7 +21,7 @@
       align-content: center;
 }
 
-.container section.main .img-div {
+section.main .img-div {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -31,18 +31,18 @@
   margin: auto;
 }
 
-.container section.main .img-div img {
+section.main .img-div img {
   width: 550px;
   height: auto;
   padding: 10vh;
 }
 
-.container section.main .start-btn-div {
+section.main .start-btn-div {
   -ms-grid-column-align: end;
       justify-self: end;
 }
 
-.container section.main .options-btn-div {
+section.main .options-btn-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,20 +53,20 @@
   justify-self: start;
 }
 
-.container section.main .options-btn-div button {
+section.main .options-btn-div button {
   margin-bottom: 0.5em;
 }
 
-.container section.main .options-btn-div .hidden {
+section.main .options-btn-div .hidden {
   opacity: 0;
 }
 
-.container section.main .options-btn-div [data-function="donate"] {
+section.main .options-btn-div [data-function="donate"] {
   background: #0fa7ff;
   border-color: #0fa7ff;
 }
 
-.container section.main .button-div button {
+section.main .button-div button {
   cursor: pointer;
   width: 8rem;
   padding: 1em;
@@ -78,7 +78,7 @@
   transition: ease-in-out 250ms;
 }
 
-.container section.main .button-div button:hover {
+section.main .button-div button:hover {
   background: #fff;
   color: #ff6565;
   border: 1px solid #ff6565;

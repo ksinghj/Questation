@@ -5,7 +5,7 @@ import qsLogo from "../img/questation-logo.png";
 
 const Header = () => {
   return (
-    <div className="ui secondary pointing menu">
+    <div className="ui secondary pointing menu navbar">
       <Link to="/" className="item">
         <img
           src={qsLogo}
