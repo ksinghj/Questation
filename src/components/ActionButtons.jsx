@@ -21,9 +21,11 @@ const ActionButtons = ({ isAnswers }) => {
           </button>
         </Link>
       )}
-      <button className="button whitespace-nw" type="button">
-        Create new sheet
-      </button>
+      <Link to="/create" className="whitespace-nw">
+        <button className="button whitespace-nw" type="button">
+          Create new sheet
+        </button>
+      </Link>
     </div>
   );
 };
