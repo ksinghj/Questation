@@ -1,5 +1,6 @@
+// /success
 import React from "react";
-import { Link } from "react-router-dom";
+import ActionButtons from "./ActionButtons";
 import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 import { answers } from "../actions";
@@ -21,19 +22,7 @@ class Complete extends React.Component {
   render() {
     return (
       <div className="complete__container">
-        <div className="complete__action-buttons">
-          <button className="button" type="button">
-            PDF view
-          </button>
-          <Link to="/answers">
-            <button className="button whitespace-nw" type="button">
-              Answer sheet
-            </button>
-          </Link>
-          <button className="button whitespace-nw" type="button">
-            Create new sheet
-          </button>
-        </div>
+        <ActionButtons />
         <p className="complete__info">
           Every student in your class now has a unique set of questions, see
           below. You can print these through the <strong>PDF viewer</strong>,
