@@ -76,6 +76,8 @@ section.main .button-div button {
   border-radius: 5px;
   -webkit-transition: ease-in-out 250ms;
   transition: ease-in-out 250ms;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
 }
 
 section.main .button-div button:hover {

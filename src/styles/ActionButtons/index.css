@@ -1,11 +1,25 @@
 .action-buttons {
-  display: grid;
+  /* display: grid;
   gap: 20px;
-  grid-template: 1fr / 1fr 1fr 1fr;
+  grid-template: 1fr / 1fr 1fr 1fr; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 2em auto;
-  width: 500px;
+  width: 50vw;
+  max-width: 482px;
 }
 
 button a {
   color: white;
+}
+
+button:hover a {
+  color: #ff6565;
+}
+
+Link,
+button {
+  flex-basis: 100%;
+  margin: 0 1em;
 }

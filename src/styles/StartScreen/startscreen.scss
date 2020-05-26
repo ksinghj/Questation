@@ -60,6 +60,7 @@ section.main {
       border: 1px solid $quest_pink;
       border-radius: 5px;
       transition: ease-in-out 250ms;
+      flex-basis: auto;
     }
 
     button:hover {

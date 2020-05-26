@@ -6,10 +6,10 @@ const ActionButtons = ({ isAnswers }) => {
   if (!isAnswers) {
     return (
       <div className="action-buttons">
-        <button className="button" type="button">
+        <button className="button whitespace-nw" type="button" disabled>
           PDF view
         </button>
-        <Link to="/answers">
+        <Link to="/answers" className="whitespace-nw">
           <button className="button whitespace-nw" type="button">
             Answer sheet
           </button>
@@ -22,12 +22,14 @@ const ActionButtons = ({ isAnswers }) => {
   }
   return (
     <div className="action-buttons">
-      <button className="button" type="button">
+      <button className="button whitespace-nw" type="button" disabled>
         PDF view
       </button>
-      <button className="button whitespace-nw" type="button">
-        <Link to="/success">Question sheets</Link>
-      </button>
+      <Link to="/success" className="whitespace-nw">
+        <button className="button whitespace-nw" type="button">
+          Question sheets
+        </button>
+      </Link>
       <button className="button whitespace-nw" type="button">
         Create new sheet
       </button>

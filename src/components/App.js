@@ -1,9 +1,9 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 // components
-import Navbar from "./Navbar";
-import QuestionCreate from "./QuestionCreate";
+import Layout from "./Layout";
 import StartScreen from "./StartScreen";
+import QuestionCreate from "./QuestionCreate";
 import SheetReview from "./SheetReview";
 import Complete from "./Complete";
 import Answers from "./Answers";
@@ -47,14 +47,15 @@ class App extends React.Component {
         <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
           <div className="ui container">
             <Router history={history}>
-              <Route path="/" exact component={StartScreen} />
-              <Route path="/" component={Navbar} />
-              <Switch>
-                <Route path="/create" component={QuestionCreate} />
-                <Route path="/review" exact component={SheetReview} />
-                <Route path="/success" exact component={Complete} />
-                <Route path="/answers" exact component={Answers} />
-              </Switch>
+              <Layout>
+                <Switch>
+                  <Route path="/" exact component={StartScreen} />
+                  <Route path="/create" component={QuestionCreate} />
+                  <Route path="/review" exact component={SheetReview} />
+                  <Route path="/success" exact component={Complete} />
+                  <Route path="/answers" exact component={Answers} />
+                </Switch>
+              </Layout>
             </Router>
           </div>
         </PersistGate>
