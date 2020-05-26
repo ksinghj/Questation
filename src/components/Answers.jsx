@@ -1,16 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import SheetPreview from "./SheetPreview";
-import { create, all } from "mathjs";
-// mathjs config
-const config = {};
-const math = create(all, config);
 
 class Answers extends React.Component {
   renderSheets = () => {
     return this.props.class.map((question, index) => {
-      let ans = math.evaluate("4+4");
-      console.log(`mathjs test ans: `, ans);
       return <SheetPreview data={question} sheet={index + 1} answersBool />;
     });
   };
