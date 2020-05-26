@@ -50,8 +50,4 @@ class SheetPreview extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { answers: state.answersReducer };
-};
-
-export default connect(mapStateToProps, {})(SheetPreview);
+export default connect(null, {})(SheetPreview);
