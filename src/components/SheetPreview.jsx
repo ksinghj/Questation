@@ -51,27 +51,25 @@ class SheetPreview extends React.Component {
       );
     }
     // answers
-    return this.props.answers.map(function (subarray) {
-      return (
-        <div className="sheetpreview__container sheet">
-          <h4 className="sheetpreview__sheet-number">
-            {answersBool ? "Answers" : "Sheet"} {sheet}
-          </h4>
-          <ol className="sheetpreview__list">
-            {subarray.map(q => {
-              return <li>{q}</li>;
-            })}
-          </ol>
-          <div className="sheetpreview__watermark">
-            <img
-              className="watermark__image"
-              src={require("../img/questation-logo.png")}
-              alt="Questation logo"
-            />
-          </div>
+    return (
+      <div className="sheetpreview__container sheet">
+        <h4 className="sheetpreview__sheet-number">
+          {answersBool ? "Answers" : "Sheet"} {sheet}
+        </h4>
+        <ol className="sheetpreview__list">
+          {data.map(q => {
+            return <li>{q}</li>;
+          })}
+        </ol>
+        <div className="sheetpreview__watermark">
+          <img
+            className="watermark__image"
+            src={require("../img/questation-logo.png")}
+            alt="Questation logo"
+          />
         </div>
-      );
-    });
+      </div>
+    );
   }
 }
 

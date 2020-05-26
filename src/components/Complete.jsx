@@ -9,7 +9,7 @@ import "../styles/misc/button.css";
 class Complete extends React.Component {
   renderSheets = () => {
     return this.props.class.map((q, index) => {
-      return <SheetPreview answersBool={false} data={q} sheet={index + 1} />;
+      return <SheetPreview data={q} sheet={index + 1} answersBool={false} />;
     });
   };
 
