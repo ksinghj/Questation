@@ -5,7 +5,6 @@ import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 import { answers } from "../actions";
 import "../styles/Complete/index.css";
-import "../styles/misc/button.css";
 
 class Complete extends React.Component {
   renderSheets = () => {
@@ -21,7 +20,8 @@ class Complete extends React.Component {
 
   render() {
     return (
-      <div className="complete__container">
+      <div className="complete__container mt">
+        <h2>Sheets generated</h2>
         <ActionButtons />
         <p className="complete__info">
           Every student in your class now has a unique set of questions, see

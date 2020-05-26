@@ -2,7 +2,6 @@ import React from "react";
 import history from "../history";
 import { connect } from "react-redux";
 import { enterStudents } from "../actions";
-import "../styles/misc/button.css";
 import "../styles/GenerateSheets/index.css";
 import { createAClass, answers } from "../actions";
 import { replaceNums, getAnswer } from "./alg";

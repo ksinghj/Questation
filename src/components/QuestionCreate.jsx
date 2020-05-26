@@ -4,7 +4,6 @@ import { createQuestionSheet, clickContinue } from "../actions";
 import history from "../history";
 
 import "../styles/QuestionCreate/index.css";
-import "../styles/misc/button.css";
 
 class QuestionCreate extends React.Component {
   state = {

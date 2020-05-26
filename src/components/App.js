@@ -7,6 +7,10 @@ import StartScreen from "./StartScreen";
 import SheetReview from "./SheetReview";
 import Complete from "./Complete";
 import Answers from "./Answers";
+
+// global style
+import "../styles/global.css";
+
 // imp
 import { PersistGate } from "redux-persist/integration/react";
 import history from "../history";

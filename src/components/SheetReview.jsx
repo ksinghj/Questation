@@ -6,12 +6,11 @@ import { connect } from "react-redux";
 import { clickGoBack } from "../actions";
 
 import "../styles/SheetReview/index.css";
-import "../styles/misc/button.css";
 
 class SheetReview extends React.Component {
   render() {
     return (
-      <div className="sheetreview__container">
+      <div className="sheetreview__container mt">
         <Link to="/create">
           <button
             type="button"

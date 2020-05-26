@@ -4,7 +4,6 @@ import SheetPreview from "./SheetPreview";
 import ActionButtons from "./ActionButtons";
 // import { Link } from "react-router-dom";
 import "../styles/Answers/index.css";
-import "../styles/misc/button.css";
 
 class Answers extends React.Component {
   renderSheets = () => {
@@ -15,8 +14,8 @@ class Answers extends React.Component {
 
   render() {
     return (
-      <div className="answers__container">
-        <h3>Answers</h3>
+      <div className="answers__container mt">
+        <h2 className="answers__header">Answers</h2>
         <ActionButtons isAnswers />
         {this.renderSheets()}
       </div>
