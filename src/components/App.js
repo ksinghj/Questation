@@ -7,7 +7,7 @@ import StartScreen from "./StartScreen";
 import SheetReview from "./SheetReview";
 import Complete from "./Complete";
 import Answers from "./Answers";
-// npm
+// imp
 import { PersistGate } from "redux-persist/integration/react";
 import history from "../history";
 import { Provider } from "react-redux";
@@ -27,8 +27,8 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 const store = createStore(
   persistedReducer,
   compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk)
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
