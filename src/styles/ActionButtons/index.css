@@ -2,18 +2,16 @@
   /* display: grid;
   gap: 20px;
   grid-template: 1fr / 1fr 1fr 1fr; */
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-around; */
   margin: 2em auto;
-  width: 50vw;
-  max-width: 482px;
-  flex-grow: 1;
+  text-align: center;
+  /* flex-grow: 1; */
 }
 
 button a {
   color: white;
-
 }
 
 button:hover a {
@@ -23,4 +21,18 @@ button:hover a {
 Link,
 button {
   margin: 0 1em;
+  width: 150px;
+}
+
+@media screen and (max-width: 1100px) {
+  .action-buttons {
+    max-width: 450px;
+  }
+
+  Link,
+  button {
+    margin: 0 1em;
+    width: 100px;
+    font-size: 8px;
+  }
 }

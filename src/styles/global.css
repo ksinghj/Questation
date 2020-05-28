@@ -45,4 +45,8 @@ button[disabled]:hover {
   .app__container {
     font-size: 12px;
   }
+
+  h2 {
+    font-size: 18px;
+  }
 }
