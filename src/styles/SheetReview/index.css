@@ -8,8 +8,8 @@
   left: 0;
 }
 
-/* @media screen and (min-width: 1100px) {
+@media screen and (max-width: 1100px) {
   .sheetreview__container h2 {
-    font-size: 14px;
+    font-size: 16px;
   }
-} */
+}

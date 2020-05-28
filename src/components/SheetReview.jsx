@@ -11,12 +11,11 @@ class SheetReview extends React.Component {
   render() {
     return (
       <div className="sheetreview__container mt">
-        <Link to="/create">
+        <Link to="/create" className="whitespace-nw">
           <button
             type="button"
             className="sheetreview__button button"
-            onClick={this.props.clickGoBack}
-          >
+            onClick={this.props.clickGoBack}>
             Go back
           </button>
         </Link>
