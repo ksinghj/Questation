@@ -31,8 +31,8 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 const store = createStore(
   persistedReducer,
   compose(
-    applyMiddleware(thunk)
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
@@ -60,7 +60,9 @@ class App extends React.Component {
                     path="/success"
                     exact
                     component={Complete}
-                    purgePersistor={this.purgePersistor}
+                    purgePersistor={() => {
+                      persistor.purge();
+                    }}
                   />
                   <Route path="/answers" exact component={Answers} />
                 </Switch>
