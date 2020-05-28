@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/ActionButtons/index.css";
 
-const ActionButtons = ({ isAnswers }) => {
+const ActionButtons = ({ isAnswers, props }) => {
   return (
     <div className="action-buttons">
       <Link to="/success" className="whitespace-nw">
@@ -23,7 +23,10 @@ const ActionButtons = ({ isAnswers }) => {
           </button>
         </Link>
       )}
-      <Link to="/create" className="whitespace-nw">
+      <Link
+        to="/create"
+        className="whitespace-nw"
+        onClick={props.purgePersistor()}>
         <button className="button whitespace-nw" type="button">
           Create new sheet
         </button>

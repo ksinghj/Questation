@@ -39,6 +39,10 @@ const store = createStore(
 let persistor = persistStore(store);
 
 class App extends React.Component {
+  purgePersistor = () => {
+    persistor.purge();
+  };
+
   render() {
     // use this to clear store
     //persistor.purge();
@@ -52,7 +56,12 @@ class App extends React.Component {
                   <Route path="/" exact component={StartScreen} />
                   <Route path="/create" component={QuestionCreate} />
                   <Route path="/review" exact component={SheetReview} />
-                  <Route path="/success" exact component={Complete} />
+                  <Route
+                    path="/success"
+                    exact
+                    component={Complete}
+                    purgePersistor={this.purgePersistor}
+                  />
                   <Route path="/answers" exact component={Answers} />
                 </Switch>
               </Layout>
