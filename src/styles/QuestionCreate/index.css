@@ -15,3 +15,18 @@
 .questioncreate__continue {
   margin: 1em auto;
 }
+
+@media screen and (max-width: 1100px) {
+  .questioncreate__container {
+    font-size: 12px;
+  }
+
+  .questioncreate__container h2 {
+    font-size: 14px;
+  }
+
+  .questioncreate__container form {
+    max-width: 400px;
+    margin: auto;
+  }
+}

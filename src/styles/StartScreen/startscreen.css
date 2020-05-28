@@ -16,7 +16,7 @@ section.main {
   -ms-grid-rows: 1fr 1fr;
   -ms-grid-columns: 1fr 1fr;
       grid-template: 1fr 1fr / 1fr 1fr;
-  grid-gap: 1em;
+  gap: 1em;
   -ms-flex-line-pack: center;
       align-content: center;
 }
@@ -84,5 +84,16 @@ section.main .button-div button:hover {
   background: #fff;
   color: #ff6565;
   border: 1px solid #ff6565;
+}
+
+@media screen and (max-width: 1100px) {
+  .ss__logo {
+    max-width: 400px;
+  }
+  section.main {
+    font-size: 10px;
+    grid-gap: 0;
+    gap: 0;
+  }
 }
 /*# sourceMappingURL=startscreen.css.map */

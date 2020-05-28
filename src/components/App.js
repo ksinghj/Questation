@@ -45,7 +45,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
-          <div className="ui container">
+          <div className="ui container app__container">
             <Router history={history}>
               <Layout>
                 <Switch>

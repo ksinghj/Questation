@@ -37,3 +37,9 @@ button[disabled]:hover {
 .whitespace-nw {
   white-space: nowrap;
 }
+
+@media screen and (min-width: 1100px) {
+  .app__container {
+    font-size: 12px;
+  }
+}

@@ -4,7 +4,7 @@ import "../styles/StartScreen/startscreen.css";
 
 class StartScreen extends Component {
   render() {
-    // get options from questation old later
+    // TODO: get options from questation old later
     return (
       <div className="container">
         <section className="main">
@@ -12,6 +12,7 @@ class StartScreen extends Component {
             <img
               src={require("../img/questation-logo.png")}
               alt="Questation logo"
+              className="ss__logo"
             />
           </div>
           <div className="button-div main-flex-item start-btn-div">

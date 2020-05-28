@@ -15,7 +15,7 @@ section.main {
   margin: 20vh 0;
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr;
-  grid-gap: 1em;
+  gap: 1em;
   align-content: center;
   // width: 100vw;
 
@@ -68,5 +68,18 @@ section.main {
       color: $quest_pink;
       border: 1px solid $quest_pink;
     }
+  }
+}
+
+// media queries
+@media screen and (max-width: 1100px) {
+  .ss__logo {
+    max-width: 400px;
+  }
+
+  section.main {
+    font-size: 10px;
+    grid-gap: 0;
+    gap: 0;
   }
 }
