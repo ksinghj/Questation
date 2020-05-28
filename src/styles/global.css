@@ -1,6 +1,9 @@
 .mt {
   margin-top: 3em;
 }
+.app__container {
+  font-size: 16px;
+}
 
 .button {
   cursor: pointer;

@@ -5,9 +5,11 @@ import "../styles/ActionButtons/index.css";
 const ActionButtons = ({ isAnswers }) => {
   return (
     <div className="action-buttons">
-      <button className="button whitespace-nw" type="button" disabled>
-        PDF view
-      </button>
+      <Link to="/success" className="whitespace-nw">
+        <button className="button whitespace-nw" type="button" disabled>
+          PDF view
+        </button>
+      </Link>
       {isAnswers ? (
         <Link to="/success" className="whitespace-nw">
           <button className="button whitespace-nw" type="button">
