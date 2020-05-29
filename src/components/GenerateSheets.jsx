@@ -7,7 +7,7 @@ import { createAClass, answers } from "../actions";
 import { replaceNums, getAnswer } from "./alg";
 
 class GenerateSheets extends React.Component {
-  state = { students: 0, notZero: false, classArr: null };
+  state = { students: 0, notZero: false, classArr: [] };
 
   handleStudentNumberEnter = e => {
     this.setState({ students: e.target.value });
