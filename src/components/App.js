@@ -45,14 +45,17 @@ class App extends React.Component {
     // use this to clear store
     //persistor.purge();
     return (
-      <Provider store={store}>
-        <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
-          <div className="ui container app__container">
-            <Media query={{ maxWidth: 600 }}>
-              {matches =>
-                matches ? (
-                  <MobileScreen />
-                ) : (
+      <Media query={{ maxWidth: 600 }}>
+        {matches =>
+          matches ? (
+            <MobileScreen />
+          ) : (
+            <Provider store={store}>
+              <PersistGate
+                loading={<div>Loading...</div>}
+                persistor={persistor}
+              >
+                <div className="ui container app__container">
                   <Router history={history}>
                     <Layout>
                       <Switch>
@@ -64,12 +67,12 @@ class App extends React.Component {
                       </Switch>
                     </Layout>
                   </Router>
-                )
-              }
-            </Media>
-          </div>
-        </PersistGate>
-      </Provider>
+                </div>
+              </PersistGate>
+            </Provider>
+          )
+        }
+      </Media>
     );
   }
 }
