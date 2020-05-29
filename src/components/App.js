@@ -7,11 +7,12 @@ import QuestionCreate from "./QuestionCreate";
 import SheetReview from "./SheetReview";
 import Complete from "./Complete";
 import Answers from "./Answers";
-
+import MobileScreen from "./MobileScreen";
 // global style
 import "../styles/global.css";
 
 // imp
+import Media from "react-media";
 import { PersistGate } from "redux-persist/integration/react";
 import history from "../history";
 import { Provider } from "react-redux";
@@ -32,6 +33,7 @@ const store = createStore(
   persistedReducer,
   compose(
     applyMiddleware(thunk)
+    // redux dev tools
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
@@ -46,17 +48,25 @@ class App extends React.Component {
       <Provider store={store}>
         <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
           <div className="ui container app__container">
-            <Router history={history}>
-              <Layout>
-                <Switch>
-                  <Route path="/" exact component={StartScreen} />
-                  <Route path="/create" component={QuestionCreate} />
-                  <Route path="/review" exact component={SheetReview} />
-                  <Route path="/success" exact component={Complete} />
-                  <Route path="/answers" exact component={Answers} />
-                </Switch>
-              </Layout>
-            </Router>
+            <Media query={{ maxWidth: 600 }}>
+              {matches =>
+                matches ? (
+                  <MobileScreen />
+                ) : (
+                  <Router history={history}>
+                    <Layout>
+                      <Switch>
+                        <Route path="/" exact component={StartScreen} />
+                        <Route path="/create" component={QuestionCreate} />
+                        <Route path="/review" exact component={SheetReview} />
+                        <Route path="/success" exact component={Complete} />
+                        <Route path="/answers" exact component={Answers} />
+                      </Switch>
+                    </Layout>
+                  </Router>
+                )
+              }
+            </Media>
           </div>
         </PersistGate>
       </Provider>

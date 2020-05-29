@@ -1,0 +1,35 @@
+.mobilescreen__container {
+    margin: 2em auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+  top: 40%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.mobilescreen__container * {
+    margin: 2em 0;
+}
+
+.mobilescreen__container p {
+    max-width: 60vw;
+    margin: 2em auto;
+}
+.mobilescreen__container img {
+    margin: 2em auto;
+}
+
+.mobilescreen__form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 75vw;
+}
+
+.mobilescreen__form button {
+    width: 45vw;
+    margin: auto;
+}
