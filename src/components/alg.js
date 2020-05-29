@@ -24,7 +24,6 @@ export const replaceNums = input => {
   return newArr;
 };
 
-// let noObj;
 let questionsArr = [];
 let chunked = [];
 
@@ -46,38 +45,10 @@ const evaluateAnswer = questionAsObjwArrs => {
   return chunked;
 };
 
-export function getAnswer(arr) {
-  let manipulated = evaluateAnswer(arr);
+export function getAnswer(obj) {
+  let manipulated = evaluateAnswer(obj);
   return manipulated.map(expr => {
     let ans = math.evaluate(expr);
     return ans;
   });
 }
-
-// ???
-// math.evaluate()
-// ? store in question: answer pairs obj
-// so eventually we have:
-// let students = {
-//   student1: {
-//     question1: answer,
-//     question2: answer,
-//     question3: answer,
-//     question4: answer,
-//     question5: answer
-//   },
-//   student2: {
-//     question1: answer,
-//     question2: answer,
-//     question3: answer,
-//     question4: answer,
-//     question5: answer
-//   },
-//   student3: {
-//     question1: answer,
-//     question2: answer,
-//     question3: answer,
-//     question4: answer,
-//     question5: answer
-//   }
-// };
