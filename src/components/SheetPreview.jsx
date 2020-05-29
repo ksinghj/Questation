@@ -34,8 +34,8 @@ class SheetPreview extends React.Component {
           {answersBool ? "Answers" : "Sheet"} {sheet}
         </h4>
         <ol className="sheetpreview__list">
-          {data.map(q => {
-            return <li>{q}</li>;
+          {data.map((q, index) => {
+            return <li key={index}>{q}</li>;
           })}
         </ol>
         <div className="sheetpreview__watermark">

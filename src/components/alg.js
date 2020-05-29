@@ -37,7 +37,6 @@ const toAnsString = questionAsObjwArrs => {
     return nestedArr.map(q => {
       let asString = q.join("");
       questionsArr.push(asString);
-      console.log(`questionsArr: `, questionsArr);
       return questionsArr;
     });
   });

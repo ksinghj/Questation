@@ -21,7 +21,7 @@ class SheetReview extends React.Component {
           </button>
         </Link>
         <h2>Review Question Sheet</h2>
-        <p>
+        <p className="sheetreview__info">
           Does this look right? <strong>Warning:</strong> Pressing go back will
           erase the questions from your sheet.
         </p>

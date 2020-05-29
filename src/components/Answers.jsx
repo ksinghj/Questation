@@ -8,7 +8,14 @@ import "../styles/Answers/index.css";
 class Answers extends React.Component {
   renderSheets = () => {
     return this.props.answers.map((question, index) => {
-      return <SheetPreview data={question} sheet={index + 1} answersBool />;
+      return (
+        <SheetPreview
+          data={question}
+          sheet={index + 1}
+          key={index}
+          answersBool
+        />
+      );
     });
   };
 

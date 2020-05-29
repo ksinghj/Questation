@@ -9,7 +9,14 @@ import "../styles/Complete/index.css";
 class Complete extends React.Component {
   renderSheets = () => {
     return this.props.class.map((q, index) => {
-      return <SheetPreview data={q} sheet={index + 1} answersBool={false} />;
+      return (
+        <SheetPreview
+          data={q}
+          sheet={index + 1}
+          answersBool={false}
+          key={index}
+        />
+      );
     });
   };
 
