@@ -22,11 +22,11 @@ class Complete extends React.Component {
     return (
       <div className="complete__container mt">
         <h2>Sheets generated</h2>
-        <ActionButtons purgePersistor={this.props.purgePersistor} />
+        <ActionButtons />
         <p className="complete__info">
           Every student in your class now has a unique set of questions, see
           below. You can print these through the <strong>PDF viewer</strong>,
-          view the <strong>answer sheet</strong> and create a new set of
+          view the <strong>answer sheets</strong> and create a new set of
           question sheets using the buttons above.
         </p>
         {this.renderSheets()}

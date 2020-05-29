@@ -15,13 +15,15 @@ class SheetReview extends React.Component {
           <button
             type="button"
             className="sheetreview__button button"
-            onClick={this.props.clickGoBack}>
+            onClick={this.props.clickGoBack}
+          >
             Go back
           </button>
         </Link>
         <h2>Review Question Sheet</h2>
         <p>
-          Warning: Pressing go back will erase the questions from your sheet.
+          Does this look right? <strong>Warning:</strong> Pressing go back will
+          erase the questions from your sheet.
         </p>
         <SheetPreview answersBool={false} data={this.props.questions} />
         <GenerateSheets />

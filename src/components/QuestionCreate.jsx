@@ -74,10 +74,10 @@ class QuestionCreate extends React.Component {
     return (
       <div className="questioncreate__container">
         <h2>Create a Question Sheet</h2>
-        <p>Questation only allows 5 questions for now.</p>
+        <p>Questation only allows 5 questions for now. Ommit all commas.</p>
         <p>
-          Warning: After pressing continue you won't be able to edit your
-          questions, so double check!
+          <strong>Warning:</strong> After pressing continue you won't be able to
+          edit your questions, so double check!
         </p>
         <form
           onSubmit={this.onFormSubmit}
@@ -98,11 +98,7 @@ class QuestionCreate extends React.Component {
           <div className="ui input questioncreate__input">
             <input onChange={this.handeInput5Change} id="5" />
           </div>
-          <button
-            className="button questioncreate__continue"
-            type="submit"
-            onClick={this.clickContinue}
-          >
+          <button className="button questioncreate__continue" type="submit">
             Continue
           </button>
         </form>

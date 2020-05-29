@@ -21,19 +21,13 @@ class ActionButtons extends React.Component {
         ) : (
           <Link to="/answers" className="whitespace-nw">
             <button className="button whitespace-nw" type="button">
-              Answer sheet
+              Answer sheets
             </button>
           </Link>
         )}
-        <Link
-          to="/create"
-          className="whitespace-nw"
-          onClick={this.props.purgePersistor}>
-          <button
-            className="button whitespace-nw"
-            type="button"
-            onClick={this.props.purgePersistor}>
-            Create new sheet
+        <Link to="/create" className="whitespace-nw">
+          <button className="button whitespace-nw" type="button">
+            New sheet
           </button>
         </Link>
       </div>
