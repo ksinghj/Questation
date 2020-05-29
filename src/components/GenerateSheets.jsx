@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { enterStudents } from "../actions";
 import "../styles/GenerateSheets/index.css";
 import { createAClass, answers } from "../actions";
-import { replaceNums, getAnswer } from "./alg";
+import { replaceNums, getAnswer, clearQuestionsArr } from "./alg";
 
 class GenerateSheets extends React.Component {
   state = { students: 0, notZero: false, classArr: [] };
@@ -46,6 +46,7 @@ class GenerateSheets extends React.Component {
       let ans = getAnswer(newQuestions);
       this.props.answers(ans);
     }
+    clearQuestionsArr();
     await this.props.createAClass(classArr);
   };
 
