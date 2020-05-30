@@ -3,6 +3,7 @@ import { Router, Route, Switch } from "react-router-dom";
 // components
 import Layout from "./Layout";
 import StartScreen from "./StartScreen";
+import Options from "./Options";
 import QuestionCreate from "./QuestionCreate";
 import SheetReview from "./SheetReview";
 import Complete from "./Complete";
@@ -60,6 +61,8 @@ class App extends React.Component {
                     <Layout>
                       <Switch>
                         <Route path="/" exact component={StartScreen} />
+                        <Route path="/options" component={Options} />
+
                         <Route path="/create" component={QuestionCreate} />
                         <Route path="/review" component={SheetReview} />
                         <Route path="/success" component={Complete} />
