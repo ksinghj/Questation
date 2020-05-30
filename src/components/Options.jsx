@@ -5,7 +5,7 @@ class Options extends React.Component {
     return (
       <div className="options__container">
         <p>
-          <a href="https://github.com/ksinghj/Questation">
+          <a href="https://github.com/ksinghj/Questation" target="_blank">
             Project GitHub repo
           </a>
         </p>
