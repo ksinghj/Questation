@@ -61,9 +61,9 @@ class App extends React.Component {
                       <Switch>
                         <Route path="/" exact component={StartScreen} />
                         <Route path="/create" component={QuestionCreate} />
-                        <Route path="/review" exact component={SheetReview} />
-                        <Route path="/success" exact component={Complete} />
-                        <Route path="/answers" exact component={Answers} />
+                        <Route path="/review" component={SheetReview} />
+                        <Route path="/success" component={Complete} />
+                        <Route path="/answers" component={Answers} />
                       </Switch>
                     </Layout>
                   </Router>
