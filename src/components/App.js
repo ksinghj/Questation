@@ -45,7 +45,7 @@ class App extends React.Component {
     // use this to clear store
     //persistor.purge();
     return (
-      <Media query={{ maxWidth: 600 }}>
+      <Media query={{ maxWidth: 1000 }}>
         {matches =>
           matches ? (
             <MobileScreen />
