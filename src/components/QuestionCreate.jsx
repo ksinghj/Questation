@@ -84,7 +84,11 @@ class QuestionCreate extends React.Component {
           style={{ display: "flex", flexDirection: "column" }}
         >
           <div className="ui input questioncreate__input">
-            <input onChange={this.handeInput1Change} id="1" />
+            <input
+              onChange={this.handeInput1Change}
+              id="1"
+              placeholder="33+(4*2)/2"
+            />
           </div>
           <div className="ui input questioncreate__input">
             <input onChange={this.handeInput2Change} id="2" />
