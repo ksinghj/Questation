@@ -1,6 +1,8 @@
 {
   "name": "client",
+  "description": "Questation - The right way to create homework. Questation is the perfect resource for maths teachers; structure your questions, I'll do the rest.",
   "version": "0.1.0",
+  "author": "ksinghj",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -34,7 +36,6 @@
     "eject": "react-scripts eject",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
-
   },
   "eslintConfig": {
     "extends": "react-app"
