@@ -1,0 +1,15 @@
+.more__container {
+  padding: 1em;
+}
+
+.more__demo {
+  display: flex;
+  flex-direction: column;
+}
+.more__demo label {
+  margin: 2em 0 1em 0;
+}
+
+.more__github-link {
+  font-size: 20px;
+}

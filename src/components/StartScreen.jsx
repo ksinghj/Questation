@@ -4,7 +4,7 @@ import "../styles/StartScreen/startscreen.css";
 
 class StartScreen extends Component {
   render() {
-    // TODO: get options from questation old later
+    // TODO: get options from questation old
     return (
       <div className="container">
         <section className="main">
@@ -22,6 +22,9 @@ class StartScreen extends Component {
               </button>
             </Link>
           </div>
+          {
+            // options was renamed to more
+          }
           <div className="button-div main-flex-item options-btn-div">
             <Link to="/more">
               <button data-function="options" type="button">
