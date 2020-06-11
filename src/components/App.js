@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 // components
 import Layout from "./Layout";
 import StartScreen from "./StartScreen";
@@ -60,6 +60,7 @@ class App extends React.Component {
                   <Router history={history}>
                     <Layout>
                       <Switch>
+                        <Route render={() => <Redirect to="/" />} />
                         <Route path="/" exact component={StartScreen} />
                         <Route path="/options" component={Options} />
 

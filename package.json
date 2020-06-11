@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "questation",
   "description": "Questation - The right way to create homework. Questation is the perfect resource for maths teachers; structure your questions, I'll do the rest.",
   "version": "0.1.0",
   "author": "ksinghj",
@@ -23,6 +23,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0"
   },
+  "main": "./public/main.js",
   "build": {
     "appId": "com.questation.app",
     "mac": {
@@ -35,7 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "yarn build --x64 --macos --win --linux --c.extraMetadata.main=build/electron.js -p always",
+    "electron": "electron ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,6 +55,8 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
+    "electron": "^9.0.3",
     "electron-builder": "^22.7.0"
   },
   "postinstall": "electron-builder install-app-deps"
