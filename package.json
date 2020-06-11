@@ -21,11 +21,20 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0"
   },
+  "build": {
+    "appId": "com.questation.app",
+    "mac": {
+      "category": "public.app-category.news"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron-builder": "^22.7.0"
   }
 }
