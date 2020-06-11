@@ -23,9 +23,9 @@ class StartScreen extends Component {
             </Link>
           </div>
           <div className="button-div main-flex-item options-btn-div">
-            <Link to="/options">
+            <Link to="/more">
               <button data-function="options" type="button">
-                Options
+                More
               </button>
             </Link>
           </div>

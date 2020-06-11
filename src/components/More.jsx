@@ -1,6 +1,6 @@
 import React from "react";
 
-class Options extends React.Component {
+class More extends React.Component {
   render() {
     return (
       <div className="options__container">
@@ -18,4 +18,4 @@ class Options extends React.Component {
   }
 }
 
-export default Options;
+export default More;
