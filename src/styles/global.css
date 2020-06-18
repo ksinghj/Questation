@@ -50,3 +50,7 @@ button[disabled]:hover {
     font-size: 18px;
   }
 }
+
+.scroll-button {
+  background: #ff6565;
+}

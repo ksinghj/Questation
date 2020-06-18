@@ -5,6 +5,8 @@ import SheetPreview from "./SheetPreview";
 import { connect } from "react-redux";
 import { answers } from "../actions";
 import "../styles/Complete/index.css";
+import "../styles/global.css";
+import ScrollUpButton from "react-scroll-up-button";
 
 class Complete extends React.Component {
   renderSheets = () => {
@@ -37,6 +39,7 @@ class Complete extends React.Component {
           question sheets using the buttons above.
         </p>
         {this.renderSheets()}
+        <ScrollUpButton ContainerClassName="button scroll-button" />
       </div>
     );
   }

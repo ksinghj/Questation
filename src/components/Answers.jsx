@@ -4,6 +4,8 @@ import SheetPreview from "./SheetPreview";
 import ActionButtons from "./ActionButtons";
 // import { Link } from "react-router-dom";
 import "../styles/Answers/index.css";
+import "../styles/global.css";
+import ScrollUpButton from "react-scroll-up-button";
 
 class Answers extends React.Component {
   renderSheets = () => {
@@ -25,6 +27,7 @@ class Answers extends React.Component {
         <h2 className="answers__header">Answers</h2>
         <ActionButtons isAnswers />
         {this.renderSheets()}
+        <ScrollUpButton ContainerClassName="button scroll-button" />
       </div>
     );
   }
