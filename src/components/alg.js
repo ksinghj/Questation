@@ -29,10 +29,9 @@ let chunked = [];
 
 const toAnsString = questionAsObjwArrs => {
   let newArr = [];
-
   let noObj = Object.values(questionAsObjwArrs);
+
   newArr.push(noObj);
-  // questionsArr = []; // need to empty after every call
   newArr.map(nestedArr => {
     return nestedArr.map(q => {
       let asString = q.join("");
@@ -45,9 +44,7 @@ const toAnsString = questionAsObjwArrs => {
   return chunked;
 };
 
-export const clearQuestionsArr = () => {
-  questionsArr = [];
-};
+export const clearQuestionsArr = () => (questionsArr = []);
 
 export function getAnswer(obj) {
   let manipulated = toAnsString(obj);
