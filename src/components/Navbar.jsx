@@ -10,12 +10,14 @@ const Header = () => {
         <img
           src={qsLogo}
           alt="logo"
-          style={{ width: "150px", height: "auto" }}
+          style={{ width: "200px", height: "auto", margin: "0.8em 0" }}
         />
       </Link>
       <div className="right menu">
         <Link style={{ alignSelf: "center", color: "black" }} to="/">
-          <p>Back to start</p>
+          <button className="button whitespace-nw" type="button">
+            Back to start
+          </button>
         </Link>
       </div>
     </div>
