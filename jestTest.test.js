@@ -1,5 +1,6 @@
 // this is to test Jest is working
-const add = require("./jestTest");
+// const add = require("./jestTest");
+import { add } from "./jestTest.js";
 
 // template
 describe("adds", () => {
