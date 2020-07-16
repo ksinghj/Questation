@@ -15,9 +15,5 @@ describe("alg tests", () => {
   });
 });
 
-// template
-// describe('', () => {
-//     it('', () => {
-//         expect();
-//     })
-// });
+// not testing other functions as they depend on third party modules
+// feel free to add more though!
