@@ -21,7 +21,7 @@ export const replaceNums = input => {
     return newArr.push(currentMap);
   });
 
-  return newArr;
+  return newArr.join("");
 };
 
 let questionsArr = [];
@@ -34,8 +34,7 @@ const toAnsString = questionAsObjwArrs => {
   newArr.push(noObj);
   newArr.map(nestedArr => {
     return nestedArr.map(q => {
-      let asString = q.join("");
-      questionsArr.push(asString);
+      questionsArr.push(q);
       return questionsArr;
     });
   });
@@ -46,6 +45,8 @@ const toAnsString = questionAsObjwArrs => {
 
 export const clearQuestionsArr = () => (questionsArr = []);
 
+// if question contains letters and words don't evaluate
+// as question and answers arent pulling through this block
 export function getAnswer(obj) {
   let manipulated = toAnsString(obj);
   return manipulated.map(expr => {
