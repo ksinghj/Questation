@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "../styles/StartScreen/startscreen.css";
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
+import "../../styles/StartScreen/startscreen.css"
 
 class StartScreen extends Component {
   render() {
@@ -10,7 +10,7 @@ class StartScreen extends Component {
         <section className="main">
           <div className="img-div main-flex-item">
             <img
-              src={require("../img/questation-logo.png")}
+              src={require("../../img/questation-logo.png")}
               alt="Questation logo"
               className="ss__logo"
             />
@@ -35,8 +35,8 @@ class StartScreen extends Component {
         </section>
         <section className="footer"></section>
       </div>
-    );
+    )
   }
 }
 
-export default StartScreen;
+export default StartScreen
