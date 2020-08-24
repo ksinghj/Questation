@@ -1,12 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/ActionButtons/index.css";
+// import html2canvas from "html2canvas";
 
 class ActionButtons extends React.Component {
   render() {
     const { isAnswers } = this.props;
+
+    const pdfView = () => {
+      console.log("pdfzzz");
+    };
+
     return (
       <div className="action-buttons">
+        {
+          // <button
+          //   className="button whitespace-nw"
+          //   type="button"
+          //   onClick={() => pdfView()}
+          // >
+          //   PDF view
+          // </button>
+        }
         <Link to="/pdfviewer" className="whitespace-nw">
           <button className="button whitespace-nw" type="button">
             PDF view
