@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "../../styles/PdfViewer/index.css";
 import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 import SheetPreview from "../../components/SheetPreview";
 
 const PdfViewer = (props) => {
@@ -21,7 +22,11 @@ const PdfViewer = (props) => {
 
   html2canvas(document.querySelector(".sheet")).then((canvas) => {
     document.body.appendChild(canvas);
-    console.log(canvas);
+    const imgData = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF();
+    pdf.addImage(imgData, "PNG", 0, 0);
+    pdf.save("download.pdf");
   });
 
   return (
