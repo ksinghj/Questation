@@ -7,8 +7,8 @@ class ActionButtons extends React.Component {
     const { isAnswers } = this.props;
     return (
       <div className="action-buttons">
-        <Link to="/success" className="whitespace-nw">
-          <button className="button whitespace-nw" type="button" disabled>
+        <Link to="/pdfviewer" className="whitespace-nw">
+          <button className="button whitespace-nw" type="button">
             PDF view
           </button>
         </Link>

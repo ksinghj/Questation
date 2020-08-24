@@ -1,12 +1,12 @@
 import React from "react";
 import demo from "../sr_demo.mov";
-import useWindowDimensions from "../useWindowDimensions";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 import "../styles/More/index.css";
 
 const More = () => {
   const { width } = useWindowDimensions();
 
-  const videoWidth = width => {
+  const videoWidth = (width) => {
     switch (width) {
       case width < 400:
         return "350px";
