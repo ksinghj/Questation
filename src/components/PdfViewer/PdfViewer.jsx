@@ -20,14 +20,25 @@ const PdfViewer = (props) => {
     });
   };
 
-  html2canvas(document.querySelector(".sheet")).then((canvas) => {
-    document.body.appendChild(canvas);
-    const imgData = canvas.toDataURL("image/png");
+  // TODO: want to loop over sheets and add to ONE PDF
+  let sheetsToPDF = Array.from(document.querySelectorAll(".sheet"));
+  console.log(sheetsToPDF);
 
-    const pdf = new jsPDF();
-    pdf.addImage(imgData, "PNG", 0, 0);
-    pdf.save("download.pdf");
+  const pdf = new jsPDF();
+
+  sheetsToPDF.forEach((sheet) => {
+    console.log(sheet);
+    html2canvas(sheet).then((canvas) => {
+      document.body.appendChild(canvas);
+
+      const imgData = canvas.toDataURL("image/png");
+
+      pdf.addImage(imgData, "PNG", 0, 0);
+    });
   });
+
+  // this is making empty pdf, is running too early maybe ?
+  pdf.save("download.pdf");
 
   return (
     <React.Fragment>
@@ -39,7 +50,12 @@ const PdfViewer = (props) => {
         </Link>
         <h5>PDF View</h5>
         <div className="pdf__content">
-          <p>pdf viewer embed here</p>
+          <p>
+            PDF should download automatically, if not{" "}
+            <a onClick={() => console.log("download pdf fuction")}>
+              click here
+            </a>
+          </p>
         </div>
       </div>
       {renderSheets()}

@@ -7,9 +7,9 @@ class ActionButtons extends React.Component {
   render() {
     const { isAnswers } = this.props;
 
-    const pdfView = () => {
-      console.log("pdfzzz");
-    };
+    // const pdfView = () => {
+    //   console.log("pdfzzz");
+    // };
 
     return (
       <div className="action-buttons">
