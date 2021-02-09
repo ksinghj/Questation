@@ -89,10 +89,4 @@ const QuestionCreate = ({ createQuestionSheet, clickContinue }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    questions: state.questionReducer.questions,
-  }
-}
-
-export default connect(mapStateToProps, { createQuestionSheet, clickContinue })(QuestionCreate)
+export default connect(null, { createQuestionSheet, clickContinue })(QuestionCreate)
