@@ -1,123 +1,98 @@
-import React from "react";
-import { connect } from "react-redux";
-import { createQuestionSheet, clickContinue } from "../actions";
-import history from "../history";
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { createQuestionSheet, clickContinue } from '../actions'
+import history from '../history'
 
-import "../styles/QuestionCreate/index.css";
+import '../styles/QuestionCreate/index.css'
 
-class QuestionCreate extends React.Component {
-  state = {
-    input1: "",
-    input2: "",
-    input3: "",
-    input4: "",
-    input5: "",
-  };
+const QuestionCreate = ({ createQuestionSheet, clickContinue }) => {
+  const INITIAL_STATE = {
+    input1: '',
+    input2: '',
+    input3: '',
+    input4: '',
+    input5: '',
+  }
+  const [inputs, setInputs] = useState(INITIAL_STATE)
+  const [clickCount, setClickCount] = useState(0)
 
-  onFormSubmit = e => {
-    e.preventDefault();
-    this.props.createQuestionSheet(this.state);
-    history.push("/review");
-  };
+  const onFormSubmit = e => {
+    e.preventDefault()
+    createQuestionSheet(inputs)
+    history.push('/review')
+  }
 
-  handeInput1Change = e => {
-    this.setState({ input1: e.target.value });
-  };
+  const handeInput1Change = e => {
+    setInputs({ ...inputs, input1: e.target.value })
+  }
 
-  handeInput2Change = e => {
-    this.setState({ input2: e.target.value });
-  };
+  const handeInput2Change = e => {
+    setInputs({ ...inputs, input2: e.target.value })
+  }
 
-  handeInput3Change = e => {
-    this.setState({ input3: e.target.value });
-  };
+  const handeInput3Change = e => {
+    setInputs({ ...inputs, input3: e.target.value })
+  }
 
-  handeInput4Change = e => {
-    this.setState({ input4: e.target.value });
-  };
+  const handeInput4Change = e => {
+    setInputs({ ...inputs, input4: e.target.value })
+  }
 
-  handeInput5Change = e => {
-    this.setState({ input5: e.target.value });
-  };
-
-  // prevQuestion = (qNo) => {
-
-  // }
+  const handeInput5Change = e => {
+    setInputs({ ...inputs, input5: e.target.value })
+  }
 
   clickContinue = () => {
-    // if (this.state.clickCount === 0) {
-    //   alert("pls check");
-    //   this.setState({ clickCount: 1 });
-    //   return;
-    // }
-    // if (this.state.clickCount === 1) {
-    //   this.props.clickContinue();
-    //   this.setState({ clickCount: 0 });
-    //   return;
-    // }
-    switch (this.state.clickCount) {
+    switch (clickCount) {
       case 0:
-        alert("pls check");
-        this.setState({ clickCount: 1 });
-        break;
+        alert('pls check')
+        setClickCount(1)
+        break
       case 1:
-        this.props.clickContinue();
-        this.setState({ clickCount: 0 });
-        break;
+        clickContinue()
+        setClickCount(0)
+        break
       default:
-        console.log("Possible error in clickContinue");
-        break;
+        console.log('Possible error in clickContinue')
+        break
     }
-  };
-
-  render() {
-    return (
-      <div className="questioncreate__container">
-        <h2>Create a Question Sheet</h2>
-        <p>Questation only allows 5 questions for now. Ommit all commas.</p>
-        <p>
-          <strong>Warning:</strong> After pressing continue you won't be able to
-          edit your questions, so double check!
-        </p>
-        <form
-          onSubmit={this.onFormSubmit}
-          style={{ display: "flex", flexDirection: "column" }}
-        >
-          <div className="ui input questioncreate__input">
-            <input
-              onChange={this.handeInput1Change}
-              id="1"
-              placeholder="33+(4*2)/2"
-            />
-          </div>
-          <div className="ui input questioncreate__input">
-            <input onChange={this.handeInput2Change} id="2" />
-          </div>
-          <div className="ui input questioncreate__input">
-            <input onChange={this.handeInput3Change} id="3" />
-          </div>
-          <div className="ui input questioncreate__input">
-            <input onChange={this.handeInput4Change} id="4" />
-          </div>
-          <div className="ui input questioncreate__input">
-            <input onChange={this.handeInput5Change} id="5" />
-          </div>
-          <button className="button questioncreate__continue" type="submit">
-            Continue
-          </button>
-        </form>
-      </div>
-    );
   }
+
+  return (
+    <div className="questioncreate__container">
+      <h2>Create a Question Sheet</h2>
+      <p>Questation only allows 5 questions for now. Ommit all commas.</p>
+      <p>
+        <strong>Warning:</strong> After pressing continue you won't be able to edit your questions, so double check!
+      </p>
+      <form onSubmit={onFormSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="ui input questioncreate__input">
+          <input onChange={handeInput1Change} id="1" placeholder="33+(4*2)/2" />
+        </div>
+        <div className="ui input questioncreate__input">
+          <input onChange={handeInput2Change} id="2" />
+        </div>
+        <div className="ui input questioncreate__input">
+          <input onChange={handeInput3Change} id="3" />
+        </div>
+        <div className="ui input questioncreate__input">
+          <input onChange={handeInput4Change} id="4" />
+        </div>
+        <div className="ui input questioncreate__input">
+          <input onChange={handeInput5Change} id="5" />
+        </div>
+        <button className="button questioncreate__continue" type="submit">
+          Continue
+        </button>
+      </form>
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
   return {
-    goBackClicked: state.goBackClicked,
     questions: state.questionReducer.questions,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, { createQuestionSheet, clickContinue })(
-  QuestionCreate
-);
+export default connect(mapStateToProps, { createQuestionSheet, clickContinue })(QuestionCreate)
